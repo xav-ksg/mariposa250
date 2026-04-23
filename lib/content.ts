@@ -28,7 +28,7 @@ export const stages: Stage[] = [
     id: 'stage-1',
     name: 'Stage 1 — Arts Park',
     location: 'Arts Park',
-    sponsor: null,
+    sponsor: undefined,
     description:
       'Our main stage in the heart of downtown. Full-band capable, premier sound system, the headlining acts of the day.',
     acts: [
