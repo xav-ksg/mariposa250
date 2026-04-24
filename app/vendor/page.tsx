@@ -1,11 +1,57 @@
 import Link from 'next/link';
-import { vendorLinks } from '@/lib/stripe-links';
 
 export const metadata = {
-  title: 'Vendor Information',
-  description:
-    'Two vendor locations for the Mariposa 250 America 250 Celebration on July 4, 2026. Book your booth at Stroming Road & 5th Street (Butterfly Festival operated) or Frost Shop Marketplace.',
+  title: 'Vendor | Mariposa 250',
+  description: 'Two vendor locations for the Mariposa 250 America 250 Celebration on July 4, 2026. Stroming Road & 5th Street vendors apply through Mariposa County; Frost Shop Marketplace managed separately.',
 };
+
+const COUNTY_VENDOR_URL = 'https://www.mariposacounty.gov/3033/Become-a-Vendor';
+
+type BoothOption = {
+  label: string;
+  price: string;
+};
+
+const stromingBooths: BoothOption[] = [
+  { label: '10x10 Booth', price: '$75' },
+  { label: '10x20 Booth', price: '$125' },
+  { label: 'Food Truck', price: '$150' },
+];
+
+const frostBooths: BoothOption[] = [
+  { label: '10x10 Booth', price: 'TBD' },
+  { label: '10x20 Booth', price: 'TBD' },
+  { label: 'Food Truck', price: 'TBD' },
+];
+
+function BoothList({ booths }: { booths: BoothOption[] }) {
+  return (
+    <ul className="mt-6 space-y-2">
+      {booths.map((b) => (
+        <li key={b.label} className="flex items-center justify-between border-b border-navy/10 py-2">
+          <span className="text-navy">{b.label}</span>
+          <span className="font-semibold text-oxblood">{b.price}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function CountyVendorButton() {
+  return (
+    <a href={COUNTY_VENDOR_URL} target="_blank" rel="noopener noreferrer" className="mt-6 inline-block rounded bg-oxblood px-6 py-3 text-sm font-semibold uppercase tracking-widest text-cream hover:bg-navy transition">
+      Apply through Mariposa County
+    </a>
+  );
+}
+
+function FrostShopButton() {
+  return (
+    <a href="mailto:Xav@FrostShopMarketplace.com?subject=Frost%20Shop%204th%20of%20July%20Vendor%20Inquiry" className="mt-6 inline-block rounded border-2 border-navy bg-cream px-6 py-3 text-sm font-semibold uppercase tracking-widest text-navy hover:bg-navy hover:text-cream transition">
+      Contact for Frost Shop vendor info
+    </a>
+  );
+}
 
 export default function VendorPage() {
   return (
@@ -18,132 +64,50 @@ export default function VendorPage() {
           <span className="italic text-oxblood">One celebration.</span>
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink/80">
-          The Mariposa 250 Celebration features two downtown vendor areas,
-          each with its own character and operator. Choose the location that
-          fits your needs — both are part of the official event footprint.
+          The Mariposa 250 Celebration features two downtown vendor areas, each with its own character and operator. Choose the location that fits your needs. Both are part of the official event footprint.
         </p>
       </div>
 
       <div className="mt-14 grid gap-12 md:grid-cols-2">
-        <LocationCard
-          name="Stroming Road & 5th Street"
-          operator="Operated by Mariposa Butterfly Festival"
-          blurb="Our primary vendor area just off downtown. Paved setup, generator access available, with vehicle access for load-in. Payments processed through the Butterfly Festival 501(c)(3)."
-          booths={[
-            { label: '10×10 Booth', price: '$75', link: vendorLinks.stroming10x10 },
-            { label: '10×20 Booth', price: '$125', link: vendorLinks.stroming10x20 },
-            { label: 'Food Truck', price: '$150', link: vendorLinks.stromingFoodTruck },
-          ]}
-        />
-        <LocationCard
-          name="Frost Shop Marketplace"
-          operator="Operated by Frost Shop Marketplace"
-          blurb="An eclectic marketplace setting that doubles as Stage 3 of the event. Frost Shop manages its own vendor intake and payment processing. Pricing and booth sizes set by Frost Shop directly."
-          booths={[
-            { label: '10×10 Booth', price: 'TBD', link: vendorLinks.frost10x10 },
-            { label: '10×20 Booth', price: 'TBD', link: vendorLinks.frost10x20 },
-            { label: 'Food Truck', price: 'TBD', link: vendorLinks.frostFoodTruck },
-          ]}
-        />
-      </div>
-
-      <div className="mt-20 border-t border-border pt-10 grid gap-10 md:grid-cols-2">
-        <div>
-          <p className="label-smallcaps mb-3">What's Included</p>
-          <ul className="space-y-2 text-ink/85">
-            <li>• Listing on the official event map and program</li>
-            <li>• Vendor parking pass (emailed on payment)</li>
-            <li>• Dedicated Vendor Coordinator on-site during event</li>
-            <li>• Access to staff-only refreshments and restrooms</li>
-            <li>• Load-in window 6:00–8:30 AM, load-out after 9:30 PM</li>
-          </ul>
+        <div className="rounded-lg bg-white p-8 border border-navy/10">
+          <h2 className="font-serif text-3xl text-navy">Stroming Road & 5th Street</h2>
+          <p className="mt-2 text-sm text-oxblood uppercase tracking-widest">Applications handled by Mariposa County</p>
+          <p className="mt-4 text-navy/80 leading-relaxed">
+            The primary downtown vendor footprint. Food vendors, artisans, retail, and community organizations. Vendor applications and payment are processed through the Mariposa County government website.
+          </p>
+          <BoothList booths={stromingBooths} />
+          <CountyVendorButton />
+          <p className="mt-4 text-xs text-navy/60 leading-relaxed">
+            Pricing listed above is indicative. Final pricing, booth availability, and all terms are set by Mariposa County on the official application page.
+          </p>
         </div>
-        <div>
-          <p className="label-smallcaps mb-3">What's Required</p>
-          <ul className="space-y-2 text-ink/85">
-            <li>• Current Certificate of Insurance (COI)</li>
-            <li>
-              • Food vendors: Mariposa County Health Department permit and
-              food handler credentials
-            </li>
-            <li>• Signed vendor agreement</li>
-            <li>• Booth setup must be complete by 9:00 AM on July 4</li>
-          </ul>
+
+        <div className="rounded-lg bg-white p-8 border border-navy/10">
+          <h2 className="font-serif text-3xl text-navy">Frost Shop Marketplace</h2>
+          <p className="mt-2 text-sm text-oxblood uppercase tracking-widest">Managed by Frost Shop Marketplace</p>
+          <p className="mt-4 text-navy/80 leading-relaxed">
+            An eclectic marketplace setting that doubles as Stage 3 of the event. Frost Shop manages its own vendor intake separately from the main event footprint. Pricing and booth sizes set by Frost Shop directly.
+          </p>
+          <BoothList booths={frostBooths} />
+          <FrostShopButton />
+          <p className="mt-4 text-xs text-navy/60 leading-relaxed">
+            Frost Shop Marketplace vendor applications and pricing are handled through Mariposa 250 directly. Contact us for details while this system is being finalized.
+          </p>
         </div>
       </div>
 
-      <div className="mt-16 rounded border border-oxblood bg-oxblood/5 p-8">
-        <p className="label-smallcaps mb-2">Questions</p>
-        <p className="font-display text-2xl text-navy">
-          Not sure which location is right for you?
+      <div className="mt-16 rounded-lg bg-navy text-cream p-8">
+        <h2 className="font-serif text-2xl text-gold mb-4">Why Two Operators?</h2>
+        <p className="text-cream/90 leading-relaxed max-w-3xl">
+          Mariposa 250 is co-hosted by Mariposa County and the Mariposa Butterfly Festival. For the primary Stroming Road vendor footprint, the County handles vendor applications and payments through its official government portal. This keeps revenue collection transparent and properly processed. The Frost Shop Marketplace is a separate private venue that is operating as Stage 3 of the event, and they handle their own vendor coordination.
         </p>
-        <p className="mt-3 text-ink/80 leading-relaxed">
-          Reach out to our Vendor Coordinator — we'll help you decide based on
-          your product, crowd expectations, and logistical needs.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-flex items-center rounded bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-widest text-cream hover:bg-oxblood transition"
-        >
-          Contact Vendor Coordinator
+      </div>
+
+      <div className="mt-10">
+        <Link href="/" className="text-navy/60 text-sm hover:text-navy">
+          Back to home
         </Link>
       </div>
     </div>
-  );
-}
-
-interface Booth {
-  label: string;
-  price: string;
-  link: string;
-}
-
-function LocationCard({
-  name,
-  operator,
-  blurb,
-  booths,
-}: {
-  name: string;
-  operator: string;
-  blurb: string;
-  booths: Booth[];
-}) {
-  return (
-    <article className="border border-border bg-white/60 p-8">
-      <h2 className="font-display text-3xl text-navy">{name}</h2>
-      <p className="mt-1 text-sm italic text-muted">{operator}</p>
-      <p className="mt-4 text-ink/80 leading-relaxed">{blurb}</p>
-
-      <div className="mt-8 rule-double">
-        <p className="label-smallcaps">Booth Options</p>
-      </div>
-
-      <ul className="mt-4 space-y-3">
-        {booths.map((booth) => (
-          <li
-            key={booth.label}
-            className="flex items-center justify-between border-b border-border pb-3"
-          >
-            <div>
-              <p className="font-semibold text-navy">{booth.label}</p>
-              <p className="text-2xl font-display text-oxblood">{booth.price}</p>
-            </div>
-            {booth.link ? (
-              <a
-                href={booth.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded bg-navy px-4 py-2 text-xs font-semibold uppercase tracking-widest text-cream hover:bg-oxblood transition"
-              >
-                Book Now
-              </a>
-            ) : (
-              <span className="text-xs italic text-muted">Coming soon</span>
-            )}
-          </li>
-        ))}
-      </ul>
-    </article>
   );
 }
