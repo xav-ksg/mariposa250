@@ -7,10 +7,18 @@ export const metadata = {
     'Restaurants, cafés, and bars in Mariposa County for July 4, 2026 visitors.',
 };
 
+type Restaurant = {
+  name: string;
+  category: string;
+  address: string;
+  description: string;
+  website?: string;
+};
+
 // ⚠️ Event staff: verify these before public launch. Names + addresses from
 // Chamber directory, Tourism Bureau listings, and public Google business
 // listings; descriptions are factual and neutral, not reviews.
-const restaurants = [
+const restaurants: Restaurant[] = [
   {
     name: "Savoury's Restaurant",
     category: 'Fine Dining',
@@ -133,16 +141,16 @@ export default function EatPage() {
               </div>
               <p className="text-sm text-navy/60 mb-2">{r.address}</p>
               <p className="text-sm text-navy/80 mb-2">{r.description}</p>
-              {'website' in r && r.website ? (
+              {r.website && (
                 
-                  href={r.website as string}
+                  href={r.website}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-oxblood hover:underline"
                 >
                   Website →
                 </a>
-              ) : null}
+              )}
             </div>
           ))}
         </div>
