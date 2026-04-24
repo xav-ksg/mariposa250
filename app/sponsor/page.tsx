@@ -23,7 +23,7 @@ const tiers: Tier[] = [
     slots: '1 slot available',
     description: 'The single top-tier partnership. Your organization is named in every public mention of Mariposa 250.',
     benefits: [
-      'Dedicated Presented by [You] recognition site-wide',
+      'Dedicated Presented by recognition site-wide',
       'Logo in all marketing materials',
       'Verbal recognition during drone show',
       'Dedicated press release',
@@ -137,13 +137,6 @@ function TierCard({ tier }: { tier: Tier }) {
   const descClasses = tier.highlight ? 'text-cream/90 text-sm mt-3 leading-relaxed' : 'text-navy/80 text-sm mt-3 leading-relaxed';
   const bulletClasses = tier.highlight ? 'text-cream/90 text-sm' : 'text-navy/80 text-sm';
 
-  const bullets = tier.benefits.map((b) => (
-    <li key={b} className={bulletClasses}>
-      <span className="text-gold mr-2">✓</span>
-      {b}
-    </li>
-  ));
-
   return (
     <div className={cardClasses}>
       <div className="flex items-start justify-between mb-2">
@@ -152,44 +145,48 @@ function TierCard({ tier }: { tier: Tier }) {
       <div className={priceClasses}>{tier.price}</div>
       <div className={slotClasses}>{tier.slots}</div>
       <p className={descClasses}>{tier.description}</p>
-      <ul className="mt-4 space-y-2">{bullets}</ul>
+      <ul className="mt-4 space-y-2">
+        {tier.benefits.map((b) => (
+          <li key={b} className={bulletClasses}>
+            <span className="text-gold mr-2">{"\u2713"}</span>
+            {b}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function CountyButton() {
+  return (
+    <a href={COUNTY_SPONSOR_URL} target="_blank" rel="noopener noreferrer" className="inline-block rounded bg-oxblood px-8 py-4 text-base font-semibold uppercase tracking-widest text-cream hover:bg-navy transition">
+      Become a Sponsor
+    </a>
+  );
+}
+
+function ConfirmedSponsorCard({ name, tier }: { name: string; tier: string }) {
+  return (
+    <div className="bg-white p-4 rounded-lg border border-navy/10">
+      <h3 className="font-serif text-lg text-navy">{name}</h3>
+      <div className="text-sm text-oxblood">{tier}</div>
     </div>
   );
 }
 
 export default function SponsorPage() {
-  const countyButton = (
-    
-      href={COUNTY_SPONSOR_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block rounded bg-oxblood px-8 py-4 text-base font-semibold uppercase tracking-widest text-cream hover:bg-navy transition"
-    >
-      Become a Sponsor →
-    </a>
-  );
-
-  const confirmedCards = confirmedSponsors.map((s) => (
-    <div key={s.name} className="bg-white p-4 rounded-lg border border-navy/10">
-      <h3 className="font-serif text-lg text-navy">{s.name}</h3>
-      <div className="text-sm text-oxblood">{s.tier}</div>
-    </div>
-  ));
-
-  const tierCards = tiers.map((t) => <TierCard key={t.name} tier={t} />);
-
   return (
     <div className="bg-cream min-h-screen">
       <section className="mx-auto max-w-5xl px-6 py-16">
         <Link href="/" className="text-navy/60 text-sm hover:text-navy mb-6 inline-block">
-          ← Back to home
+          Back to home
         </Link>
         <h1 className="font-serif text-5xl text-navy mb-6 leading-tight">Sponsor Mariposa 250</h1>
         <p className="text-lg text-navy/80 max-w-3xl mb-4 leading-relaxed">
-          On July 4, 2026, Mariposa hosts a free community celebration unlike any other in the Sierra foothills — a 200-drone aerial show, five stages of live music, an evening parade, and a downtown transformed for the day. Sponsors make it possible.
+          On July 4, 2026, Mariposa hosts a free community celebration unlike any other in the Sierra foothills. A 200-drone aerial show, five stages of live music, an evening parade, and a downtown transformed for the day. Sponsors make it possible.
         </p>
         <p className="text-lg text-navy/80 max-w-3xl mb-10 leading-relaxed">
-          Choose your level of support below. When you are ready, your sponsorship is completed through the Mariposa County government portal — simple, transparent, and officially processed.
+          Choose your level of support below. When you are ready, your sponsorship is completed through the Mariposa County government portal. Simple, transparent, and officially processed.
         </p>
 
         <div className="bg-navy text-cream p-6 rounded-lg mb-12 text-center">
@@ -197,17 +194,25 @@ export default function SponsorPage() {
           <p className="text-cream/90 mb-4">
             Sponsorship registration and payment is handled through the Mariposa County government website.
           </p>
-          {countyButton}
+          <CountyButton />
         </div>
 
         <div className="mb-12">
           <h2 className="font-serif text-3xl text-navy mb-4">Confirmed Sponsors</h2>
           <p className="text-navy/70 mb-6">These organizations have committed to supporting Mariposa 250:</p>
-          <div className="grid md:grid-cols-2 gap-4">{confirmedCards}</div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {confirmedSponsors.map((s) => (
+              <ConfirmedSponsorCard key={s.name} name={s.name} tier={s.tier} />
+            ))}
+          </div>
         </div>
 
         <h2 className="font-serif text-3xl text-navy mb-6 mt-12">Sponsorship Tiers</h2>
-        <div className="grid md:grid-cols-2 gap-6 mb-12">{tierCards}</div>
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {tiers.map((t) => (
+            <TierCard key={t.name} tier={t} />
+          ))}
+        </div>
 
         <div className="bg-oxblood/10 border-l-4 border-oxblood p-6 mb-12">
           <h3 className="font-serif text-xl text-navy mb-2">Nonprofit Information</h3>
@@ -221,7 +226,7 @@ export default function SponsorPage() {
           <p className="text-cream/90 mb-6 max-w-2xl mx-auto leading-relaxed">
             July 4, 2026 marks America&apos;s 250th birthday. Your sponsorship underwrites free admission for an estimated 5,000 to 7,000 attendees, a 200-drone aerial show replacing traditional fireworks during wildfire season, and a day of celebration for Mariposa County.
           </p>
-          {countyButton}
+          <CountyButton />
           <p className="mt-6 text-cream/70 text-sm">
             Questions? Email kimberly.mariposafestival@gmail.com or call 209-201-4137.
           </p>
