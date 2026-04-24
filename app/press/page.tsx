@@ -103,7 +103,7 @@ export default function PressPage() {
           />
           <StoryAngle
             title="Gold Rush Meets 250"
-            description="Mariposa County is one of the original California Gold Rush counties, home to the state's oldest courthouse still in use (1854) and the oldest continuously-published weekly newspaper (Mariposa Gazette, est. 1854). A Historical Firearms Auction at the Mariposa Museum & History Center connects July 4, 2026 back to the frontier era that shaped California's entry into the Union."
+            description="Mariposa County is one of the original California Gold Rush counties, home to the state's oldest courthouse still in use (1854) and the oldest continuously-published weekly newspaper (Mariposa Gazette, est. 1854). A Historical Firearms Auction at the Mariposa Museum and History Center connects July 4, 2026 back to the frontier era that shaped California's entry into the Union."
           />
           <StoryAngle
             title="Small Town Scales Up"
@@ -300,7 +300,7 @@ export default function PressPage() {
             nonprofit) and Mariposa County, the event features five live
             music stages, a community parade produced by the Mariposa County
             Chamber of Commerce and the Mariposa Lions Club, a Historical
-            Firearms Auction at the Mariposa Museum &amp; History Center, food
+            Firearms Auction at the Mariposa Museum and History Center, food
             and artisan vendors, and — instead of traditional fireworks — a
             200-drone aerial light show choreographed by Skydreams over 8th
             Street.
