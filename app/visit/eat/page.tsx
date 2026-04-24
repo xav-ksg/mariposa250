@@ -15,9 +15,6 @@ type Restaurant = {
   website?: string;
 };
 
-// ⚠️ Event staff: verify these before public launch. Names + addresses from
-// Chamber directory, Tourism Bureau listings, and public Google business
-// listings; descriptions are factual and neutral, not reviews.
 const restaurants: Restaurant[] = [
   {
     name: "Savoury's Restaurant",
@@ -98,6 +95,30 @@ const restaurants: Restaurant[] = [
   },
 ];
 
+function RestaurantCard({ r }: { r: Restaurant }) {
+  return (
+    <div className="bg-white p-5 rounded-lg border border-navy/10">
+      <div className="flex items-start justify-between gap-3 mb-2">
+        <h3 className="font-serif text-xl text-navy">{r.name}</h3>
+        <span className="text-xs text-oxblood bg-oxblood/10 px-2 py-1 rounded whitespace-nowrap">
+          {r.category}
+        </span>
+      </div>
+      <p className="text-sm text-navy/60 mb-2">{r.address}</p>
+      <p className="text-sm text-navy/80 mb-2">{r.description}</p>
+      {r.website ? <WebsiteLink url={r.website} /> : null}
+    </div>
+  );
+}
+
+function WebsiteLink({ url }: { url: string }) {
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" className="text-sm text-oxblood hover:underline">
+      Website →
+    </a>
+  );
+}
+
 export default function EatPage() {
   return (
     <div className="bg-cream min-h-screen">
@@ -129,29 +150,7 @@ export default function EatPage() {
 
         <div className="grid md:grid-cols-2 gap-4 mb-12">
           {restaurants.map((r) => (
-            <div
-              key={r.name}
-              className="bg-white p-5 rounded-lg border border-navy/10"
-            >
-              <div className="flex items-start justify-between gap-3 mb-2">
-                <h3 className="font-serif text-xl text-navy">{r.name}</h3>
-                <span className="text-xs text-oxblood bg-oxblood/10 px-2 py-1 rounded whitespace-nowrap">
-                  {r.category}
-                </span>
-              </div>
-              <p className="text-sm text-navy/60 mb-2">{r.address}</p>
-              <p className="text-sm text-navy/80 mb-2">{r.description}</p>
-              {r.website && (
-                
-                  href={r.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-oxblood hover:underline"
-                >
-                  Website →
-                </a>
-              )}
-            </div>
+            <RestaurantCard key={r.name} r={r} />
           ))}
         </div>
 
