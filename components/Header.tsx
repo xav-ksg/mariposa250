@@ -4,9 +4,11 @@ const nav = [
   { href: '/schedule', label: 'Schedule' },
   { href: '/parade', label: 'Parade' },
   { href: '/map', label: 'Map' },
+  { href: '/visit', label: 'Visit' },
   { href: '/sponsor', label: 'Sponsor' },
   { href: '/vendor', label: 'Vendor' },
   { href: '/volunteer', label: 'Volunteer' },
+  { href: '/press', label: 'Press' },
   { href: '/faq', label: 'FAQ' },
 ];
 
@@ -23,7 +25,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -42,7 +44,6 @@ export default function Header() {
           Sponsor
         </Link>
 
-        {/* Mobile menu button — placeholder; hook up real menu later */}
         <button
           type="button"
           className="md:hidden rounded border border-navy px-3 py-2 text-xs font-semibold uppercase tracking-widest text-navy"
