@@ -8,8 +8,8 @@ export const metadata = {
 };
 
 // ⚠️ Event staff: verify these before public launch. Names + addresses from
-// Chamber directory and Tourism Bureau listings; descriptions are factual
-// and neutral, not reviews.
+// Chamber directory, Tourism Bureau listings, and public Google business
+// listings; descriptions are factual and neutral, not reviews.
 const restaurants = [
   {
     name: "Savoury's Restaurant",
@@ -40,35 +40,46 @@ const restaurants = [
       'Traditional steakhouse in downtown Mariposa. Dinner only; reservations recommended.',
   },
   {
-    name: 'Sugar Pine Café',
-    category: 'Breakfast / Lunch',
-    address: '5038 CA-140, Mariposa, CA 95338',
-    description:
-      'Local favorite for breakfast and lunch. Expect a line on weekend mornings.',
-  },
-  {
-    name: 'Pony Espresso Café',
-    category: 'Coffee / Light Meals',
+    name: 'Little Shop of Ramen',
+    category: 'Ramen / Asian',
     address: 'Mariposa, CA',
-    description: 'Coffee shop and café serving breakfast, light lunch, and pastries.',
+    website: 'https://www.littleshopoframen.com/',
+    description:
+      'Ramen shop serving Japanese-style noodle bowls and small plates in downtown Mariposa.',
   },
   {
-    name: 'Castillo\'s Mexican Food',
+    name: 'Falaf.a.lot',
+    category: 'Middle Eastern',
+    address: 'Mariposa, CA',
+    description:
+      'Middle Eastern spot specializing in falafel and Mediterranean fare in Mariposa.',
+  },
+  {
+    name: "Smokin' Oak BBQ and Twisted Cedar Tap House",
+    category: 'BBQ / Taphouse',
+    address: 'Mariposa, CA',
+    description:
+      "Barbecue restaurant paired with a taphouse. Smokin' Oak is also the sponsor of Stage 3 at Mariposa 250.",
+  },
+  {
+    name: 'Sticks Coffee',
+    category: 'Coffee / Café',
+    address: 'Mariposa, CA',
+    description:
+      'Local coffee shop serving espresso drinks, brewed coffee, and light café fare.',
+  },
+  {
+    name: "Castillo's Mexican Food",
     category: 'Mexican',
     address: '4995 5th St, Mariposa, CA 95338',
     description: 'Local Mexican restaurant, popular with locals and visitors.',
   },
   {
-    name: 'Yaqui Gulch Brewing Company',
-    category: 'Brewery / Pub',
+    name: 'Pony Espresso Café',
+    category: 'Coffee / Light Meals',
     address: 'Mariposa, CA',
-    description: 'Craft brewery serving beer and pub food.',
-  },
-  {
-    name: 'Hideout Steakhouse',
-    category: 'Steakhouse',
-    address: 'Mariposa, CA',
-    description: 'Steakhouse with western atmosphere.',
+    description:
+      'Coffee shop and café serving breakfast, light lunch, and pastries.',
   },
   {
     name: 'June Bug Café (Yosemite Bug Resort)',
@@ -96,9 +107,10 @@ export default function EatPage() {
         </h1>
         <p className="text-lg text-navy/80 max-w-3xl mb-4 leading-relaxed">
           Downtown Mariposa has a compact but diverse restaurant scene — from
-          Gold Rush–era dining rooms to craft breweries, Mexican cantinas, and
-          classic American diners. On July 4, many restaurants will be busy;
-          we recommend reservations where possible and patience where not.
+          Gold Rush–era dining rooms to craft breweries, ramen, Middle Eastern,
+          BBQ, Mexican cantinas, and classic American diners. On July 4, many
+          restaurants will be busy; we recommend reservations where possible
+          and patience where not.
         </p>
         <div className="bg-oxblood/10 border-l-4 border-oxblood p-4 mb-10 text-navy/90">
           <strong>Day-of Mariposa 250 food:</strong> The event will have food
@@ -120,7 +132,17 @@ export default function EatPage() {
                 </span>
               </div>
               <p className="text-sm text-navy/60 mb-2">{r.address}</p>
-              <p className="text-sm text-navy/80">{r.description}</p>
+              <p className="text-sm text-navy/80 mb-2">{r.description}</p>
+              {'website' in r && r.website ? (
+                
+                  href={r.website as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-oxblood hover:underline"
+                >
+                  Website →
+                </a>
+              ) : null}
             </div>
           ))}
         </div>
@@ -132,7 +154,7 @@ export default function EatPage() {
             business directory including every restaurant, café, and food
             business in the county.
           </p>
-          <a
+          
             href="https://www.mariposachamber.org/copy-of-business-directory"
             target="_blank"
             rel="noopener noreferrer"
