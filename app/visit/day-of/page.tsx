@@ -70,7 +70,7 @@ export default function DayOfPage() {
             <li className="flex gap-3">
               <span className="text-gold font-semibold">2.</span>
               <div>
-                <strong>Mariposa Museum &amp; History Center lot</strong>
+                <strong>Mariposa Museum and History Center lot</strong>
                 <br />
                 <span className="text-sm text-navy/70">Central to event footprint</span>
               </div>

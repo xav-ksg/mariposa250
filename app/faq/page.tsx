@@ -52,7 +52,7 @@ const faqSections: FaqSection[] = [
     items: [
       {
         q: 'Where should I park?',
-        a: 'Event parking lots will be available throughout downtown Mariposa. The Frost Shop Marketplace lot and the Mariposa Museum & History Center lot are two of our primary lots. We strongly recommend arriving before 4 PM.',
+        a: 'Event parking lots will be available throughout downtown Mariposa. The Frost Shop Marketplace lot and the Mariposa Museum and History Center lot are two of our primary lots. We strongly recommend arriving before 4 PM.',
         a_more:
           'A third event parking lot is being finalized. Updated parking map will be posted on the Day-of Event page closer to the date.',
       },

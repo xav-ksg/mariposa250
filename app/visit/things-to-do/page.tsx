@@ -12,7 +12,7 @@ const attractions = [
     category: 'Museums & History',
     items: [
       {
-        name: 'Mariposa Museum & History Center',
+        name: 'Mariposa Museum and History Center',
         address: '5119 Jessie St, Mariposa, CA',
         description:
           "Hosts Mariposa 250's Historical Firearms Auction. A deep dive into Gold Rush–era Mariposa, mining artifacts, and indigenous Miwok history.",
