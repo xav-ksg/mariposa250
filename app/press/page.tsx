@@ -234,18 +234,13 @@ export default function PressPage() {
         <h2 className="font-serif text-3xl text-navy mb-6">Key People for Interviews</h2>
         <div className="grid md:grid-cols-2 gap-4 mb-12">
           <PersonCard
-            name="Xavier Dubois"
-            role="Event Coordinator, Mariposa 250"
-            context="Overall event vision, logistics, County partnership, budget"
-          />
-          <PersonCard
             name="Jenni Kiser"
-            role="Skydreams, 200-Drone Show Director"
+            role="Supervisor, Mariposa County Board of Supervisors (District 4) / Co-Producer, Mariposa 250"
             context="How the drone show is choreographed, FAA approvals, fire-safety design"
           />
           <PersonCard
             name="Kimberly Vaughn"
-            role="Chair, Mariposa Butterfly Festival"
+            role="Executive Director, Mariposa Butterfly Festival"
             context="501(c)(3) context, community fundraising, nonprofit mission"
           />
           <PersonCard
@@ -259,9 +254,14 @@ export default function PressPage() {
             context="Safety planning, first responder coordination, emergency protocols"
           />
           <PersonCard
-            name="Mariposa Chamber of Commerce and Visitors Center"
-            role="Parade Producer, Chamber of Commerce"
-            context="Parade organization, Lions Club partnership, downtown logistics"
+            name="Kari Kisela"
+            role="Mariposa County Chamber of Commerce and Visitors Center"
+            context="Chamber operations, parade coordination, business engagement. kari@mariposachamber.org"
+          />
+          <PersonCard
+            name="Jacob Hawley"
+            role="Mariposa County Chamber of Commerce and Visitors Center"
+            context="Chamber operations, parade coordination, business engagement. jacob@mariposachamber.org"
           />
         </div>
 
