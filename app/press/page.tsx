@@ -1,117 +1,374 @@
-import { pressReleases } from '@/lib/content';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Press',
+  title: 'Press Kit | Mariposa 250',
   description:
-    'Press resources for the Mariposa 250 America 250 Celebration: press releases, media kit, high-res photos, contact information.',
+    'Media resources, press releases, fact sheet, and contact information for journalists covering the Mariposa 250 Celebration on July 4, 2026.',
 };
 
 export default function PressPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
-      <div className="border-b border-border pb-10">
-        <p className="label-smallcaps mb-4">For the Press</p>
-        <h1 className="font-display text-5xl md:text-6xl text-navy">
-          Press &amp; Media Resources
+    <div className="bg-cream min-h-screen">
+      <section className="mx-auto max-w-5xl px-6 py-16">
+        <h1 className="font-serif text-5xl text-navy mb-6 leading-tight">
+          Press Kit
         </h1>
-        <p className="mt-6 text-lg leading-relaxed text-ink/80">
-          Covering Mariposa 250? Everything you need is here. For
-          interviews, exclusive quotes, or on-site media credentials for
-          event day, use the media contact form below.
+        <p className="text-lg text-navy/80 max-w-3xl mb-12 leading-relaxed">
+          A free community celebration. A 200-drone light show replacing
+          fireworks. A small Gold Rush town hosting America&apos;s 250th
+          birthday. Below are the resources journalists need to tell this
+          story.
         </p>
-      </div>
 
-      {/* Press kit download */}
-      <section className="mt-12 border border-border bg-white/60 p-8">
-        <p className="label-smallcaps mb-3">Press Kit</p>
-        <h2 className="font-display text-3xl text-navy">
-          One-page fact sheet, logos, high-res photos
-        </h2>
-        <p className="mt-3 text-ink/80 leading-relaxed">
-          The press kit includes: event fact sheet, co-host bios (Butterfly
-          Festival and Mariposa County), official event logo in multiple
-          formats, high-res photos of Mariposa and drone show renderings,
-          and approved quotes from event producers.
-        </p>
-        <a
-          href="/press-kit/mariposa250-press-kit.zip"
-          className="mt-6 inline-flex items-center rounded bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-widest text-cream hover:bg-oxblood transition"
-        >
-          Download Press Kit (Coming Soon)
-        </a>
-      </section>
-
-      {/* Press releases list */}
-      <section className="mt-16">
-        <h2 className="font-display text-3xl text-navy border-b border-border pb-3">
-          Press Releases
-        </h2>
-        <p className="mt-2 text-muted">Chronological, most recent first.</p>
-
-        <div className="mt-8 space-y-8">
-          {[...pressReleases]
-            .sort((a, b) => b.targetDate.localeCompare(a.targetDate))
-            .map((release) => {
-              const isFuture = new Date(release.targetDate) > new Date();
-              return (
-                <article key={release.id} className="border-b border-border pb-8">
-                  <div className="flex items-center gap-3">
-                    <time className="label-smallcaps" dateTime={release.targetDate}>
-                      {formatDate(release.targetDate)}
-                    </time>
-                    {isFuture ? (
-                      <span className="text-xs italic text-muted">(Scheduled)</span>
-                    ) : (
-                      <span className="text-xs font-semibold text-green-700">Released</span>
-                    )}
-                    <span className="text-xs text-muted">· {release.type}</span>
-                  </div>
-                  <h3 className="mt-2 font-display text-2xl text-navy leading-tight">
-                    {release.headline}
-                  </h3>
-                  <p className="mt-3 text-ink/80 leading-relaxed">{release.leadParagraph}</p>
-                  {release.fullTextUrl && (
-                    <a
-                      href={release.fullTextUrl}
-                      className="mt-3 inline-block text-sm font-semibold text-oxblood hover:text-navy"
-                    >
-                      Read full release →
-                    </a>
-                  )}
-                </article>
-              );
-            })}
+        {/* MEDIA CONTACT */}
+        <div className="bg-oxblood text-cream p-6 rounded-lg mb-12">
+          <h2 className="font-serif text-2xl mb-3">Media Contact</h2>
+          <p className="text-cream/90 mb-4 leading-relaxed">
+            For interview requests, high-resolution assets, embargoed access,
+            or fact-checking, contact the event directly:
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <div className="text-cream/70 mb-1">Press Contact</div>
+              <div className="font-medium">
+                [MEDIA LEAD NAME]
+                <br />
+                Mariposa 250 Celebration
+              </div>
+            </div>
+            <div>
+              <div className="text-cream/70 mb-1">Reach us</div>
+              <div className="font-medium">
+                <a
+                  href="mailto:press@mariposa250.org"
+                  className="text-gold hover:underline"
+                >
+                  press@mariposa250.org
+                </a>
+                <br />
+                [PHONE NUMBER]
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* Media contact */}
-      <section className="mt-16 border-t border-border pt-10">
-        <p className="label-smallcaps mb-3">Media Contact</p>
-        <h2 className="font-display text-3xl text-navy">
-          Request an interview, quote, or media credential.
-        </h2>
-        <p className="mt-3 text-ink/80 leading-relaxed max-w-2xl">
-          The fastest way to reach us for press inquiries is through the
-          Contact form with &ldquo;Press / media inquiry&rdquo; selected as
-          your topic.
+        {/* QUICK FACTS */}
+        <h2 className="font-serif text-3xl text-navy mb-6">Quick Facts</h2>
+        <div className="bg-white border border-navy/10 p-6 rounded-lg mb-12">
+          <div className="grid sm:grid-cols-2 gap-4 text-sm text-navy/90">
+            <FactItem label="Event Name" value="Mariposa 250 Celebration" />
+            <FactItem
+              label="Date"
+              value="Saturday, July 4, 2026"
+            />
+            <FactItem label="Hours" value="9:00 AM – 10:30 PM" />
+            <FactItem label="Location" value="Downtown Mariposa, California" />
+            <FactItem
+              label="Expected Attendance"
+              value="5,000–7,000"
+            />
+            <FactItem
+              label="Admission"
+              value="Free to the public"
+            />
+            <FactItem
+              label="Co-hosts"
+              value="Mariposa County + Mariposa Butterfly Festival (501(c)(3), EIN 85-2475621)"
+            />
+            <FactItem
+              label="Headline Feature"
+              value="200-drone light show by Skydreams over 8th Street, replacing traditional fireworks"
+            />
+            <FactItem
+              label="Parade"
+              value="Produced by Mariposa County Chamber of Commerce + Lions Club, stepping off at 8:00 PM"
+            />
+            <FactItem
+              label="Stages"
+              value="Five live music stages across downtown"
+            />
+            <FactItem
+              label="Website"
+              value="mariposa250.org"
+            />
+          </div>
+        </div>
+
+        {/* STORY ANGLES */}
+        <h2 className="font-serif text-3xl text-navy mb-6">Story Angles</h2>
+        <div className="space-y-4 mb-12">
+          <StoryAngle
+            title="Fireworks, Reimagined"
+            description="A 200-drone aerial light show replaces traditional fireworks on one of California's most fire-prone weekends. Silent, safer for wildlife and watersheds, and designed specifically for the Sierra Nevada foothills. First of its scale in Mariposa County."
+          />
+          <StoryAngle
+            title="Gold Rush Meets 250"
+            description="Mariposa County is one of the original California Gold Rush counties, home to the state's oldest courthouse still in use (1854) and the oldest continuously-published weekly newspaper (Mariposa Gazette, est. 1854). A Historical Firearms Auction at the Mariposa Museum & History Center connects July 4, 2026 back to the frontier era that shaped California's entry into the Union."
+          />
+          <StoryAngle
+            title="Small Town Scales Up"
+            description="A county of ~17,000 people hosting an event for 5,000–7,000. The logistics story: how a volunteer-driven Butterfly Festival 501(c)(3) partnered with the County to organize five stages, a parade, first aid, security, shuttles, and a drone show on a community budget."
+          />
+          <StoryAngle
+            title="Economic Impact of Heritage Events"
+            description="Free community events like this drive meaningful economic activity: lodging, dining, tours, and repeat visitation. Mariposa County is also the main gateway to Yosemite National Park — July 4 traffic brings overnight stays across a region whose tourism economy funds local schools, health services, and infrastructure."
+          />
+          <StoryAngle
+            title="California and the 250th"
+            description="As California reckons with its complex role in America's first 250 years — Indigenous history, Gold Rush, statehood, the Chinese Exclusion era, the Dust Bowl, the Japanese internment, and modern Silicon Valley — Mariposa represents a specific and significant piece of the state's story. The event invites attendees to engage with both celebration and history."
+          />
+        </div>
+
+        {/* PRESS RELEASES */}
+        <h2 className="font-serif text-3xl text-navy mb-6">Press Releases</h2>
+        <p className="text-navy/80 mb-6 leading-relaxed">
+          Our press release schedule tracks the build-up to July 4 with
+          releases targeted at specific news windows. All releases are
+          available upon request to{' '}
+          <a
+            href="mailto:press@mariposa250.org"
+            className="text-oxblood hover:underline"
+          >
+            press@mariposa250.org
+          </a>
+          .
         </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-flex items-center rounded bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-widest text-cream hover:bg-oxblood transition"
-        >
-          Contact the Press Team
-        </Link>
+        <div className="bg-white border border-navy/10 rounded-lg overflow-hidden mb-12">
+          <table className="w-full text-sm">
+            <thead className="bg-navy/5 text-navy">
+              <tr>
+                <th className="text-left px-4 py-3 font-medium">Release</th>
+                <th className="text-left px-4 py-3 font-medium">
+                  Target Date
+                </th>
+                <th className="text-left px-4 py-3 font-medium">Focus</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-navy/10 text-navy/90">
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #1 — Event Announcement
+                </td>
+                <td className="px-4 py-3">Early May 2026</td>
+                <td className="px-4 py-3">
+                  Full event reveal; drone show; co-host announcement
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #2 — Drone Show Deep Dive
+                </td>
+                <td className="px-4 py-3">Mid May 2026</td>
+                <td className="px-4 py-3">
+                  Skydreams; fire safety; how the show is choreographed
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #3 — Sponsor Launch
+                </td>
+                <td className="px-4 py-3">Late May 2026</td>
+                <td className="px-4 py-3">
+                  Opening of sponsor tiers; Presenting Sponsor call
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #4 — Volunteer Call
+                </td>
+                <td className="px-4 py-3">Early June 2026</td>
+                <td className="px-4 py-3">
+                  Service club partnerships; volunteer recruitment
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #5 — Visitor Planning
+                </td>
+                <td className="px-4 py-3">Mid June 2026</td>
+                <td className="px-4 py-3">
+                  Plan Your Visit launch; lodging; Yosemite access
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #6 — Safety & Road Closures
+                </td>
+                <td className="px-4 py-3">Late June 2026</td>
+                <td className="px-4 py-3">
+                  Public safety plan; road closures; day-of logistics
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #7 — Final Countdown
+                </td>
+                <td className="px-4 py-3">Week of July 4</td>
+                <td className="px-4 py-3">
+                  Final schedule; last-minute attendee info
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #8 — Post-Event Recap
+                </td>
+                <td className="px-4 py-3">Week of July 11</td>
+                <td className="px-4 py-3">
+                  Attendance numbers; highlights; thank-yous
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">
+                  #9 — After-Action Report
+                </td>
+                <td className="px-4 py-3">Late July 2026</td>
+                <td className="px-4 py-3">
+                  Lessons learned; 2027 outlook
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* KEY PEOPLE */}
+        <h2 className="font-serif text-3xl text-navy mb-6">Key People for Interviews</h2>
+        <div className="grid md:grid-cols-2 gap-4 mb-12">
+          <PersonCard
+            name="[EVENT PRODUCER NAME]"
+            role="Event Producer, Mariposa 250"
+            context="Overall event vision, logistics, County partnership, budget"
+          />
+          <PersonCard
+            name="Jenni Kiser"
+            role="Skydreams, 200-Drone Show Director"
+            context="How the drone show is choreographed, FAA approvals, fire-safety design"
+          />
+          <PersonCard
+            name="[BOARD CHAIR NAME]"
+            role="Chair, Mariposa Butterfly Festival"
+            context="501(c)(3) context, community fundraising, nonprofit mission"
+          />
+          <PersonCard
+            name="Gail Dreyfus"
+            role="Stage Manager"
+            context="Five-stage music programming, community performers, schedule"
+          />
+          <PersonCard
+            name="[INCIDENT COMMANDER NAME]"
+            role="Event Incident Commander"
+            context="Safety planning, first responder coordination, emergency protocols"
+          />
+          <PersonCard
+            name="[CHAMBER CONTACT]"
+            role="Parade Producer, Chamber of Commerce"
+            context="Parade organization, Lions Club partnership, downtown logistics"
+          />
+        </div>
+
+        {/* VISUAL ASSETS */}
+        <h2 className="font-serif text-3xl text-navy mb-6">Visual Assets</h2>
+        <div className="bg-white border border-navy/10 p-6 rounded-lg mb-12">
+          <p className="text-navy/90 mb-4 leading-relaxed">
+            High-resolution event logos, background photography of Mariposa
+            County, drone show renderings, and sponsor-approved imagery are
+            available upon request.
+          </p>
+          <p className="text-navy/90 mb-4 leading-relaxed">
+            All visual assets may be used freely in coverage of the Mariposa
+            250 Celebration. Please credit &ldquo;Mariposa 250 Celebration&rdquo; and
+            &ldquo;Skydreams&rdquo; where applicable.
+          </p>
+          <a
+            href="mailto:press@mariposa250.org?subject=Press%20Kit%20Asset%20Request"
+            className="inline-block bg-oxblood text-cream px-5 py-3 rounded hover:bg-oxblood/90 font-medium"
+          >
+            Request Press Kit Assets →
+          </a>
+        </div>
+
+        {/* BOILERPLATE */}
+        <h2 className="font-serif text-3xl text-navy mb-6">About Mariposa 250</h2>
+        <div className="bg-navy text-cream p-6 rounded-lg mb-12">
+          <p className="text-cream/90 mb-4 leading-relaxed">
+            The Mariposa 250 Celebration is a free community event on
+            Saturday, July 4, 2026, commemorating America&apos;s 250th birthday in
+            downtown Mariposa, California — a Gold Rush town and the original
+            gateway to Yosemite National Park.
+          </p>
+          <p className="text-cream/90 mb-4 leading-relaxed">
+            Co-hosted by the Mariposa Butterfly Festival (a 501(c)(3)
+            nonprofit) and Mariposa County, the event features five live
+            music stages, a community parade produced by the Mariposa County
+            Chamber of Commerce and the Mariposa Lions Club, a Historical
+            Firearms Auction at the Mariposa Museum &amp; History Center, food
+            and artisan vendors, and — instead of traditional fireworks — a
+            200-drone aerial light show choreographed by Skydreams over 8th
+            Street.
+          </p>
+          <p className="text-cream/90 leading-relaxed">
+            The Butterfly Festival is a Mariposa-based 501(c)(3) (EIN
+            85-2475621) dedicated to community events that bring Mariposa
+            County residents together and support local nonprofits.
+          </p>
+        </div>
+
+        {/* FOOTER */}
+        <div className="text-center pt-8 border-t border-navy/20">
+          <p className="text-navy/70 text-sm">
+            Working on a story and have questions?{' '}
+            <a
+              href="mailto:press@mariposa250.org"
+              className="text-oxblood font-medium hover:underline"
+            >
+              press@mariposa250.org
+            </a>
+          </p>
+        </div>
       </section>
     </div>
   );
 }
 
-function formatDate(iso: string): string {
-  const date = new Date(iso + 'T12:00:00');
-  return date.toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  });
+function FactItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-navy/60 uppercase text-xs font-medium mb-1">
+        {label}
+      </div>
+      <div>{value}</div>
+    </div>
+  );
+}
+
+function StoryAngle({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="bg-white border-l-4 border-gold p-5 rounded-r">
+      <h3 className="font-serif text-xl text-navy mb-2">{title}</h3>
+      <p className="text-sm text-navy/80 leading-relaxed">{description}</p>
+    </div>
+  );
+}
+
+function PersonCard({
+  name,
+  role,
+  context,
+}: {
+  name: string;
+  role: string;
+  context: string;
+}) {
+  return (
+    <div className="bg-white border border-navy/10 p-5 rounded-lg">
+      <h3 className="font-serif text-lg text-navy">{name}</h3>
+      <p className="text-sm text-oxblood mb-2 font-medium">{role}</p>
+      <p className="text-sm text-navy/70">{context}</p>
+    </div>
+  );
 }
