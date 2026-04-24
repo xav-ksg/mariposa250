@@ -31,7 +31,7 @@ export default function PressPage() {
             <div>
               <div className="text-cream/70 mb-1">Press Contact</div>
               <div className="font-medium">
-                [MEDIA LEAD NAME]
+                Kimberly Vaughn
                 <br />
                 Mariposa 250 Celebration
               </div>
@@ -46,7 +46,7 @@ export default function PressPage() {
                   press@mariposa250.org
                 </a>
                 <br />
-                [PHONE NUMBER]
+                209-201-4137
               </div>
             </div>
           </div>
@@ -234,8 +234,8 @@ export default function PressPage() {
         <h2 className="font-serif text-3xl text-navy mb-6">Key People for Interviews</h2>
         <div className="grid md:grid-cols-2 gap-4 mb-12">
           <PersonCard
-            name="[EVENT PRODUCER NAME]"
-            role="Event Producer, Mariposa 250"
+            name="Xavier Dubois"
+            role="Event Coordinator, Mariposa 250"
             context="Overall event vision, logistics, County partnership, budget"
           />
           <PersonCard
@@ -244,7 +244,7 @@ export default function PressPage() {
             context="How the drone show is choreographed, FAA approvals, fire-safety design"
           />
           <PersonCard
-            name="[BOARD CHAIR NAME]"
+            name="Kimberly Vaughn"
             role="Chair, Mariposa Butterfly Festival"
             context="501(c)(3) context, community fundraising, nonprofit mission"
           />
@@ -254,12 +254,12 @@ export default function PressPage() {
             context="Five-stage music programming, community performers, schedule"
           />
           <PersonCard
-            name="[INCIDENT COMMANDER NAME]"
+            name="Captain Wes Smith"
             role="Event Incident Commander"
             context="Safety planning, first responder coordination, emergency protocols"
           />
           <PersonCard
-            name="[CHAMBER CONTACT]"
+            name="Mariposa Chamber of Commerce and Visitors Center"
             role="Parade Producer, Chamber of Commerce"
             context="Parade organization, Lions Club partnership, downtown logistics"
           />
