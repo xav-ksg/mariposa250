@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+const FB_EVENT_URL = 'https://www.facebook.com/events/963357109509757';
+
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-navy text-cream">
@@ -7,10 +9,14 @@ export default function Footer() {
         <div>
           <p className="font-display text-2xl font-semibold">Mariposa 250</p>
           <p className="mt-2 text-sm text-cream/70 leading-relaxed">
-            America’s 250th Birthday
+            America&rsquo;s 250th Birthday
             <br />
             July 4, 2026 · Downtown Mariposa, CA
           </p>
+          <a href={FB_EVENT_URL} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-cream/80 hover:text-gold transition">
+            <span>📘</span>
+            Facebook Event
+          </a>
         </div>
 
         <div>
@@ -39,6 +45,16 @@ export default function Footer() {
             <li><Link href="/press" className="hover:text-gold">Press Kit</Link></li>
             <li><Link href="/contact" className="hover:text-gold">Contact Us</Link></li>
             <li><Link href="/emergency" className="hover:text-gold">Day-of Info</Link></li>
+            <li>
+              <a href={FB_EVENT_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+                Facebook Event
+              </a>
+            </li>
+            <li>
+              <a href="https://skyedreams.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+                Drone show by SkyDreams
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -46,8 +62,7 @@ export default function Footer() {
       <div className="border-t border-cream/20">
         <div className="mx-auto max-w-6xl px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-cream/60">
           <p>
-            Produced by the Mariposa Butterfly Festival 501(c)(3) — EIN 85-2475621 —
-            in partnership with Mariposa County.
+            Produced by the Mariposa Butterfly Festival 501(c)(3) — EIN 85-2475621 — in partnership with Mariposa County.
           </p>
           <p>© 2026 Mariposa 250. All rights reserved.</p>
         </div>
