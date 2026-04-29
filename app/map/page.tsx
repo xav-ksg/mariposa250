@@ -1,7 +1,12 @@
 export const metadata = {
-  title: 'Map',
-  description:
-    'Event map for the Mariposa 250 Celebration on July 4, 2026. Stages, vendor areas, parade route, and first aid locations.',
+    title: 'Event Map',
+    description: 'Event map for the Mariposa 250 Celebration on July 4, 2026. Stages, vendor areas, parade route, and first aid in downtown Mariposa.',
+    alternates: { canonical: 'https://www.mariposa250.org/map' },
+    openGraph: {
+          title: 'Event Map | Mariposa 250',
+          description: 'Find stages, vendor areas, parade route, parking, and first aid on the Mariposa 250 event map.',
+          url: 'https://www.mariposa250.org/map',
+    },
 };
 
 export default function MapPage() {
