@@ -1,8 +1,14 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Vendor | Mariposa 250',
-  description: 'Two vendor locations for the Mariposa 250 America 250 Celebration on July 4, 2026. Stroming Road & 5th Street vendors apply through Mariposa County; Frost Shop Marketplace managed separately.',
+    title: 'Become a Vendor',
+    description: 'Two vendor locations for the Mariposa 250 Celebration on July 4, 2026. Apply through Mariposa County. Food trucks welcome.',
+    alternates: { canonical: 'https://www.mariposa250.org/vendor' },
+    openGraph: {
+          title: 'Become a Vendor | Mariposa 250',
+          description: 'Two vendor areas in downtown Mariposa for July 4, 2026. Apply through Mariposa County. Food trucks welcome.',
+          url: 'https://www.mariposa250.org/vendor',
+    },
 };
 
 const COUNTY_VENDOR_URL = 'https://www.mariposacounty.gov/3033/Become-a-Vendor';
