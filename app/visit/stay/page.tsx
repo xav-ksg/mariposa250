@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import TravelAdvisory from '@/components/TravelAdvisory';
 import { stayListings, oakhurstListings } from '@/lib/visit-content';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Where to Stay | Mariposa 250',
@@ -16,6 +17,7 @@ export default function StayPage() {
 
   return (
     <div className="bg-cream min-h-screen">
+      <Script id="stay-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Where to Stay in Mariposa County", description: "Hotels, motels, B&Bs, cabins, and campgrounds for July 4, 2026 visitors to Mariposa County. Plus Oakhurst overflow lodging.", url: "https://www.mariposa250.org/visit/stay", about: { "@type": "TouristDestination", name: "Mariposa County", touristType: "July 4 2026 visitors" } }) }} />
       <TravelAdvisory />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
