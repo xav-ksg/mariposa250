@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import TravelAdvisory from '@/components/TravelAdvisory';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Visiting Yosemite | Mariposa 250',
@@ -10,6 +11,7 @@ export const metadata = {
 export default function YosemitePage() {
   return (
     <div className="bg-cream min-h-screen">
+      <Script id="yosemite-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Visiting Yosemite from Mariposa", description: "How to visit Yosemite National Park as part of your July 4, 2026 Mariposa trip. Entry reservations, routes, and shuttle info.", url: "https://www.mariposa250.org/visit/yosemite", about: { "@type": "TouristDestination", name: "Yosemite National Park", touristType: "July 4 2026 visitors" } }) }} />
       <TravelAdvisory />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
