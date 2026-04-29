@@ -1,9 +1,14 @@
 import { stages, keyMoments } from '@/lib/content';
 
 export const metadata = {
-  title: 'Schedule',
-  description:
-    'Full schedule for the Mariposa 250 America 250 Celebration on July 4, 2026. Five stages of music, parade, 200-drone light show.',
+  title: 'Full Event Schedule',
+  description: 'Full schedule for the Mariposa 250 Celebration on July 4, 2026. Five stages of music, parade at 8:00 PM, and 200-drone light show at dusk.',
+  alternates: { canonical: 'https://www.mariposa250.org/schedule' },
+  openGraph: {
+    title: 'Full Event Schedule | Mariposa 250',
+    description: 'Five stages of music, community parade at 8:00 PM, and a 200-drone light show. Full day schedule for July 4, 2026 in downtown Mariposa.',
+    url: 'https://www.mariposa250.org/schedule',
+  },
 };
 
 export default function SchedulePage() {
