@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata = {
     title: 'Become a Vendor',
@@ -62,6 +63,14 @@ function FrostShopButton() {
 export default function VendorPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+              <Script id="vendor-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'WebPage',
+                name: 'Become a Vendor at Mariposa 250',
+                description: 'Two vendor locations in downtown Mariposa for the July 4, 2026 Mariposa 250 Celebration. Apply through Mariposa County. Food trucks welcome.',
+                url: 'https://www.mariposa250.org/vendor',
+                about: { '@type': 'Event', name: 'Mariposa 250 Celebration', startDate: '2026-07-04', location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', addressCountry: 'US' } } }
+    }) }} />
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Vendor Information</p>
         <h1 className="font-display text-5xl md:text-6xl text-navy">
