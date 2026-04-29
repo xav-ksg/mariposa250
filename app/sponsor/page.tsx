@@ -1,8 +1,14 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Sponsor | Mariposa 250',
-  description: 'Become a sponsor of the Mariposa 250 America 250 Celebration on July 4, 2026.',
+    title: 'Become a Sponsor',
+    description: 'Sponsor the Mariposa 250 Celebration on July 4, 2026. Eight tiers — top sponsors get logo placement inside the 200-drone light show.',
+    alternates: { canonical: 'https://www.mariposa250.org/sponsor' },
+    openGraph: {
+          title: 'Become a Sponsor | Mariposa 250',
+          description: 'Support the Mariposa 250 celebration. Eight sponsorship tiers — top sponsors get logo in the 200-drone light show.',
+          url: 'https://www.mariposa250.org/sponsor',
+    },
 };
 
 const COUNTY_SPONSOR_URL = 'https://www.mariposacounty.gov/3032/Become-a-Sponsor';
