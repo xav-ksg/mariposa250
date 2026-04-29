@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import TravelAdvisory from '@/components/TravelAdvisory';
-
+import Script from 'next/script';
 export const metadata = {
   title: 'Day of the Celebration | Mariposa 250',
   description:
@@ -10,6 +10,7 @@ export const metadata = {
 export default function DayOfPage() {
   return (
     <div className="bg-cream min-h-screen">
+      <Script id="dayof-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Day of the Celebration — Mariposa 250", description: "Day-of logistics for July 4, 2026: parking, road closures, shuttle routes, accessibility, and what to bring.", url: "https://www.mariposa250.org/visit/day-of", about: { "@type": "Event", name: "Mariposa 250 America 250 Celebration", startDate: "2026-07-04T09:00:00-07:00", endDate: "2026-07-04T22:00:00-07:00" } }) }} />
       <TravelAdvisory />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
