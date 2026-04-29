@@ -120,5 +120,6 @@ export default function ParadePage() {
         </Link>
       </div>
     </div>
+    </div>
   );
 }
