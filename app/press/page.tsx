@@ -1,9 +1,14 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Press Kit | Mariposa 250',
-  description:
-    'Media resources, press releases, fact sheet, and contact information for journalists covering the Mariposa 250 Celebration on July 4, 2026.',
+    title: 'Press Kit',
+    description: 'Media resources, press releases, and journalist contacts for the Mariposa 250 Celebration on July 4, 2026.',
+    alternates: { canonical: 'https://www.mariposa250.org/press' },
+    openGraph: {
+          title: 'Press Kit | Mariposa 250',
+          description: 'Press releases, event facts, photos, and journalist contact information for Mariposa 250.',
+          url: 'https://www.mariposa250.org/press',
+    },
 };
 
 export default function PressPage() {
