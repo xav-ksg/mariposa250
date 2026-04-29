@@ -2,9 +2,14 @@ import Link from 'next/link';
 import TravelAdvisory from '@/components/TravelAdvisory';
 
 export const metadata = {
-  title: 'Plan Your Visit | Mariposa 250 Celebration',
-  description:
-    "Plan your July 4, 2026 visit to downtown Mariposa, California for the America 250 Celebration. Where to stay, eat, and explore Yosemite.",
+    title: 'Plan Your Visit',
+    description: 'Plan your July 4, 2026 visit to downtown Mariposa for the America 250 Celebration. Where to stay, eat, park, and explore Yosemite.',
+    alternates: { canonical: 'https://www.mariposa250.org/visit' },
+    openGraph: {
+          title: 'Plan Your Visit | Mariposa 250',
+          description: 'Everything you need to plan your trip to Mariposa for July 4, 2026 — parking, lodging, restaurants, and nearby Yosemite.',
+          url: 'https://www.mariposa250.org/visit',
+    },
 };
 
 export default function VisitPage() {
