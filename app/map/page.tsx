@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 export default function MapPage() {
-  return (
+  return (<>
             <Script id="map-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Place',
@@ -97,6 +97,7 @@ export default function MapPage() {
         </Zone>
       </section>
     </div>
+  </>
   );
 }
 
