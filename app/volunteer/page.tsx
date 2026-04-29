@@ -2,9 +2,14 @@ import VolunteerForm from '@/components/VolunteerForm';
 import { volunteerTasks } from '@/lib/content';
 
 export const metadata = {
-  title: 'Volunteer',
-  description:
-    'Volunteer with the Mariposa 250 America 250 Celebration on July 4, 2026. Sign up for setup, stage crew, first aid, parade, and more.',
+    title: 'Volunteer',
+    description: 'Volunteer with Mariposa 250 on July 4, 2026. Sign up for setup, stage crew, first aid, parade support, and more.',
+    alternates: { canonical: 'https://www.mariposa250.org/volunteer' },
+    openGraph: {
+          title: 'Volunteer | Mariposa 250',
+          description: 'Help make Mariposa 250 happen. Volunteer opportunities include setup, stage crew, first aid, and parade support.',
+          url: 'https://www.mariposa250.org/volunteer',
+    },
 };
 
 export default function VolunteerPage() {
