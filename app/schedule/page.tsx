@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import { stages, keyMoments } from '@/lib/content';
 
 export const metadata = {
@@ -14,6 +15,20 @@ export const metadata = {
 export default function SchedulePage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+            <Script id="schedule-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Event',
+              name: 'Mariposa 250 Celebration',
+              startDate: '2026-07-04T10:00-07:00',
+              endDate: '2026-07-04T22:30-07:00',
+              eventStatus: 'https://schema.org/EventScheduled',
+              eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+              location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', postalCode: '95338', addressCountry: 'US' } },
+              description: 'Five stages of music, a Kids Zone, historical programming, a community parade at 8:00 PM, and a 200-drone light show in downtown Mariposa, California on July 4, 2026.',
+              image: 'https://www.mariposa250.org/og-image.png',
+              organizer: { '@type': 'Organization', name: 'Mariposa 250', url: 'https://www.mariposa250.org' },
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.mariposa250.org/schedule' }
+    }) }} />
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Schedule</p>
         <h1 className="font-display text-5xl md:text-6xl text-navy">
