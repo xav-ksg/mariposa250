@@ -49,19 +49,9 @@ function CountyParadeButton() {
     </a>
   );
 }
-export const metadata = {
-  title: 'Community Parade',
-  description: 'Community parade at 8:00 PM on July 4, 2026 in downtown Mariposa. Produced by the Mariposa Chamber of Commerce and Lions Club. Entry information and application.',
-  alternates: { canonical: 'https://www.mariposa250.org/parade' },
-  openGraph: {
-    title: 'Community Parade | Mariposa 250',
-    description: 'A parade by and for Mariposa County. Step-off at 8:00 PM on July 4, 2026. Local businesses, schools, classic cars, and community groups welcome.',
-    url: 'https://www.mariposa250.org/parade',
-  },
-};
 export default function ParadePage() {
   return (
-    <div>:<Script id="schema-parade" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(paradeSchema) }} />
+    <div><Script id="schema-parade" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(paradeSchema) }} />
     <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Community Parade · 8:00 PM</p>
