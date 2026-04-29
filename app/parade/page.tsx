@@ -1,10 +1,45 @@
+
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata = {
-  title: 'Parade | Mariposa 250',
-  description: 'Community parade at 8:00 PM on July 4, 2026. Produced by the Mariposa Chamber of Commerce and Lions Club. Entry information and application.',
+  title: 'Community Parade',
+  description: 'Community parade at 8:00 PM on July 4, 2026 in downtown Mariposa. Produced by the Mariposa Chamber of Commerce and Lions Club. Entry information and application.',
+  alternates: { canonical: 'https://www.mariposa250.org/parade' },
+  openGraph: {
+    title: 'Community Parade | Mariposa 250',
+    description: 'A parade by and for Mariposa County. Step-off at 8:00 PM on July 4, 2026. Local businesses, schools, classic cars, and community groups welcome.',
+    url: 'https://www.mariposa250.org/parade',
+  },
 };
 
+const paradeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Mariposa 250 Community Parade',
+  description: 'A parade by and for Mariposa County, produced by the Mariposa Chamber of Commerce and the Mariposa Lions Club.',
+  startDate: '2026-07-04T20:00:00-07:00',
+  endDate: '2026-07-04T21:00:00-07:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  isAccessibleForFree: true,
+  url: 'https://www.mariposa250.org/parade',
+  location: {
+    '@type': 'Place',
+    name: 'Downtown Mariposa',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Mariposa',
+      addressRegion: 'CA',
+      postalCode: '95338',
+      addressCountry: 'US',
+    },
+  },
+  organizer: [
+    { '@type': 'Organization', name: 'Mariposa Chamber of Commerce' },
+    { '@type': 'Organization', name: 'Mariposa Lions Club' },
+  ],
+};
 const COUNTY_PARADE_URL = 'https://www.mariposacounty.gov/3034/Parade-Entry';
 
 function CountyParadeButton() {
@@ -26,6 +61,7 @@ export const metadata = {
 };
 export default function ParadePage() {
   return (
+    <div>:<Script id="schema-parade" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(paradeSchema) }} />
     <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Community Parade · 8:00 PM</p>
