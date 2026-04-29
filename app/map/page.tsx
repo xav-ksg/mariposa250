@@ -1,3 +1,4 @@
+import Script from 'next/script';
 export const metadata = {
     title: 'Event Map',
     description: 'Event map for the Mariposa 250 Celebration on July 4, 2026. Stages, vendor areas, parade route, and first aid in downtown Mariposa.',
@@ -11,6 +12,15 @@ export const metadata = {
 
 export default function MapPage() {
   return (
+            <Script id="map-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'Place',
+                        name: 'Mariposa 250 Celebration — Downtown Mariposa Event Map',
+                        description: 'Walkable event map showing five stages, vendor areas, parade route, parking, drone show viewing area, first aid, and information booth in downtown Mariposa, California.',
+                        address: { '@type': 'PostalAddress', streetAddress: 'Downtown Mariposa', addressLocality: 'Mariposa', addressRegion: 'CA', postalCode: '95338', addressCountry: 'US' },
+                        geo: { '@type': 'GeoCoordinates', latitude: 37.4855, longitude: -119.9681 },
+                        url: 'https://www.mariposa250.org/map'
+            }) }} />
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Event Map</p>
