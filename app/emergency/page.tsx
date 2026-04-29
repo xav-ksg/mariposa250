@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 export const metadata = {
   title: 'Day-Of Info',
   description:
@@ -7,6 +9,7 @@ export const metadata = {
 export default function EmergencyPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <Script id="emergency-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Day-Of Info — Mariposa 250", description: "Road closures, parking, first aid, accessibility, and safety information for July 4, 2026.", url: "https://www.mariposa250.org/emergency", about: { "@type": "Event", name: "Mariposa 250 America 250 Celebration", startDate: "2026-07-04T09:00:00-07:00", endDate: "2026-07-04T22:00:00-07:00", location: { "@type": "Place", name: "Downtown Mariposa", address: { "@type": "PostalAddress", addressLocality: "Mariposa", addressRegion: "CA", addressCountry: "US" } } } }) }} />
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Day-Of Info · July 4, 2026</p>
         <h1 className="font-display text-5xl md:text-6xl text-navy">
