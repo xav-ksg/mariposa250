@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import TravelAdvisory from '@/components/TravelAdvisory';
 
 export const metadata = {
@@ -15,6 +16,20 @@ export const metadata = {
 export default function VisitPage() {
   return (
     <div className="bg-cream min-h-screen">
+              <Script id="visit-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'TouristDestination',
+                name: 'Mariposa County, California',
+                description: 'Plan your July 4, 2026 visit to Mariposa County for the America 250 Celebration. Gateway to Yosemite National Park, Gold Rush history, lodging, dining, and things to do.',
+                url: 'https://www.mariposa250.org/visit',
+                touristType: ['Family', 'Couples', 'History buffs', 'Outdoor enthusiasts'],
+                includesAttraction: [
+                    { '@type': 'TouristAttraction', name: 'Yosemite National Park', url: 'https://www.nps.gov/yose/' },
+                    { '@type': 'TouristAttraction', name: 'Mariposa Grove of Giant Sequoias' },
+                    { '@type': 'TouristAttraction', name: 'Mariposa Museum and History Center' }
+                            ],
+                address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', postalCode: '95338', addressCountry: 'US' }
+    }) }} />
       <TravelAdvisory />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
