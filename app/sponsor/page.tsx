@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import Link from 'next/link';
 
 export const metadata = {
@@ -187,6 +188,15 @@ export default function SponsorPage() {
         <Link href="/" className="text-navy/60 text-sm hover:text-navy mb-6 inline-block">
           Back to home
         </Link>
+                <Script id="sponsor-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'WebPage',
+                name: 'Become a Sponsor of Mariposa 250',
+                description: 'Eight sponsorship tiers from $250 to $50,000 to support the Mariposa 250 Celebration on July 4, 2026. Top sponsors get logo placement in the 200-drone light show.',
+                url: 'https://www.mariposa250.org/sponsor',
+                about: { '@type': 'Event', name: 'Mariposa 250 Celebration', startDate: '2026-07-04', location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', addressCountry: 'US' } } },
+                provider: { '@type': 'Organization', name: 'Mariposa Butterfly Festival', taxID: '85-2475621' }
+    }) }} />
         <h1 className="font-serif text-5xl text-navy mb-6 leading-tight">Sponsor Mariposa 250</h1>
         <p className="text-lg text-navy/80 max-w-3xl mb-4 leading-relaxed">
           On July 4, 2026, Mariposa hosts a free community celebration unlike any other in the Sierra foothills. A 200-drone aerial show, five stages of live music, an evening parade, and a downtown transformed for the day. Sponsors make it possible.
