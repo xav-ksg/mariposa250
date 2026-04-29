@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import TravelAdvisory from '@/components/TravelAdvisory';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Where to Eat | Mariposa 250',
@@ -50,6 +51,7 @@ export default function EatPage() {
       <TravelAdvisory />
       <section className="mx-auto max-w-5xl px-6 py-16">
         <Link href="/visit" className="text-navy/60 text-sm hover:text-navy mb-6 inline-block">← Back to Plan Your Celebration</Link>
+        <Script id="eat-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Where to Eat in Mariposa County", description: "Restaurants, cafes, and bars in Mariposa County for July 4, 2026 visitors.", url: "https://www.mariposa250.org/visit/eat" }) }} />
         <h1 className="font-serif text-5xl text-navy mb-6 leading-tight">Where to Eat</h1>
         <p className="text-lg text-navy/80 max-w-3xl mb-4 leading-relaxed">Downtown Mariposa has a compact but diverse restaurant scene — from Gold Rush–era dining rooms to craft breweries, ramen, Middle Eastern, BBQ, Mexican cantinas, and classic American diners. On July 4, many restaurants will be busy; we recommend reservations where possible and patience where not.</p>
         <div className="bg-oxblood/10 border-l-4 border-oxblood p-4 mb-10 text-navy/90">
