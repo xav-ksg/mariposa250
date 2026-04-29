@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'About',
@@ -9,6 +10,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <Script id="about-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "AboutPage", name: "About Mariposa 250", description: "The story behind the Mariposa 250 America 250 Celebration. A community event produced by the Mariposa Butterfly Festival 501(c)(3) in partnership with Mariposa County.", url: "https://www.mariposa250.org/about", mainEntity: { "@type": "Organization", name: "Mariposa Butterfly Festival", legalName: "Mariposa Butterfly Festival", taxID: "85-2475621", nonprofitStatus: "501(c)(3)", description: "A 501(c)(3) nonprofit dedicated to community events celebrating Mariposa County.", url: "https://www.mariposa250.org" } }) }} />
       <p className="label-smallcaps mb-4">About</p>
       <h1 className="font-display text-5xl md:text-6xl text-navy">
         A county celebrating
