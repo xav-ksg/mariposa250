@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata = {
     title: 'Press Kit',
@@ -14,6 +15,17 @@ export const metadata = {
 export default function PressPage() {
   return (
     <div className="bg-cream min-h-screen">
+              <Script id="press-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'NewsMediaOrganization',
+                name: 'Mariposa 250 Press Office',
+                description: 'Press kit, media resources, press releases, story angles, and journalist contacts for the Mariposa 250 Celebration on July 4, 2026.',
+                url: 'https://www.mariposa250.org/press',
+                email: 'press@mariposa250.org',
+                telephone: '+1-209-201-4137',
+                parentOrganization: { '@type': 'Organization', name: 'Mariposa 250', url: 'https://www.mariposa250.org' },
+                contactPoint: { '@type': 'ContactPoint', name: 'Kimberly Vaughn', contactType: 'Press', email: 'press@mariposa250.org', telephone: '+1-209-201-4137' }
+    }) }} />
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h1 className="font-serif text-5xl text-navy mb-6 leading-tight">
           Press Kit
