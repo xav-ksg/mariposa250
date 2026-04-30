@@ -1,7 +1,55 @@
 import Link from 'next/link';
 import Countdown from '@/components/Countdown';
-import Script from 'next/script';
+
 const FB_EVENT_URL = 'https://www.facebook.com/events/963357109509757';
+
+const eventJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: "Mariposa 250 — America's 250th Birthday Celebration",
+  description:
+    'A free, day-long community celebration on July 4, 2026 in downtown Mariposa, California. Five music stages, Kids Zone, community parade, and a 200-drone light show.',
+  startDate: '2026-07-04T09:00:00-07:00',
+  endDate: '2026-07-04T22:00:00-07:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  isAccessibleForFree: true,
+  url: 'https://www.mariposa250.org/',
+  image: ['https://www.mariposa250.org/og-image.png'],
+  location: {
+    '@type': 'Place',
+    name: 'Downtown Mariposa',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Historic Downtown — 5th & 8th Streets',
+      addressLocality: 'Mariposa',
+      addressRegion: 'CA',
+      postalCode: '95338',
+      addressCountry: 'US',
+    },
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: 'Mariposa Butterfly Festival',
+    url: 'https://www.mariposa250.org/',
+    logo: 'https://www.mariposa250.org/og-image.png',
+  },
+  performer: [
+    {
+      '@type': 'PerformingGroup',
+      name: 'Mariposa 250 Community Lineup',
+    },
+  ],
+  offers: {
+    '@type': 'Offer',
+    name: 'Free Admission',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: 'https://www.mariposa250.org/',
+    validFrom: '2025-10-01T00:00:00-07:00',
+  },
+};
 
 type ConfirmedSponsor = {
   name: string;
@@ -48,10 +96,13 @@ function SponsorBadge({ sponsor }: { sponsor: ConfirmedSponsor }) {
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
       <section className="relative overflow-hidden border-b border-border">
         <div className="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
           <p className="label-smallcaps mb-6">
-            <Script id="home-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Event", name: "Mariposa 250 — America 250 Celebration", description: "A free, day-long community celebration on July 4, 2026 in downtown Mariposa, California. Five music stages, Kids Zone, parade, and a 200-drone light show.", startDate: "2026-07-04T09:00:00-07:00", endDate: "2026-07-04T22:00:00-07:00", eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode", isAccessibleForFree: true, url: "https://www.mariposa250.org/", image: "https://www.mariposa250.org/og-image.png", location: { "@type": "Place", name: "Downtown Mariposa", address: { "@type": "PostalAddress", addressLocality: "Mariposa", addressRegion: "CA", postalCode: "95338", addressCountry: "US" } }, organizer: { "@type": "Organization", name: "Mariposa Butterfly Festival", url: "https://www.mariposa250.org" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock", url: "https://www.mariposa250.org/" } }) }} />
             Mariposa County · July 4, 2026
           </p>
           <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-navy md:text-7xl lg:text-[5.5rem]">
