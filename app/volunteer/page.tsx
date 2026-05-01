@@ -1,5 +1,4 @@
 import VolunteerForm from '@/components/VolunteerForm';
-import Script from 'next/script';
 import { volunteerTasks } from '@/lib/content';
 
 export const metadata = {
@@ -18,7 +17,7 @@ export default function VolunteerPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
-              <Script id="volunteer-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'VolunteerAction',
                 name: 'Volunteer for Mariposa 250 Celebration',

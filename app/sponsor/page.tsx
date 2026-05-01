@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import Link from 'next/link';
 
 export const metadata = {
@@ -188,13 +187,27 @@ export default function SponsorPage() {
         <Link href="/" className="text-navy/60 text-sm hover:text-navy mb-6 inline-block">
           Back to home
         </Link>
-                <Script id="sponsor-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'WebPage',
                 name: 'Become a Sponsor of Mariposa 250',
                 description: 'Eight sponsorship tiers from $250 to $50,000 to support the Mariposa 250 Celebration on July 4, 2026. Top sponsors get logo placement in the 200-drone light show.',
                 url: 'https://www.mariposa250.org/sponsor',
-                about: { '@type': 'Event', name: 'Mariposa 250 Celebration', startDate: '2026-07-04', location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', addressCountry: 'US' } } },
+                about: {
+                  '@type': 'Event',
+                  name: "Mariposa 250 — America's 250th Birthday Celebration",
+                  startDate: '2026-07-04T09:00:00-07:00',
+                  endDate: '2026-07-04T22:00:00-07:00',
+                  eventStatus: 'https://schema.org/EventScheduled',
+                  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+                  isAccessibleForFree: true,
+                  url: 'https://www.mariposa250.org/',
+                  image: ['https://www.mariposa250.org/og-image.png'],
+                  location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', streetAddress: 'Historic Downtown — 5th & 8th Streets', addressLocality: 'Mariposa', addressRegion: 'CA', postalCode: '95338', addressCountry: 'US' } },
+                  organizer: { '@type': 'Organization', name: 'Mariposa Butterfly Festival', url: 'https://www.mariposa250.org/', logo: 'https://www.mariposa250.org/og-image.png' },
+                  performer: [{ '@type': 'PerformingGroup', name: 'Mariposa 250 Community Lineup' }],
+                  offers: { '@type': 'Offer', name: 'Free Admission', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.mariposa250.org/', validFrom: '2025-10-01T00:00:00-07:00' },
+                },
                 provider: { '@type': 'Organization', name: 'Mariposa Butterfly Festival', taxID: '85-2475621' }
     }) }} />
         <h1 className="font-serif text-5xl text-navy mb-6 leading-tight">Sponsor Mariposa 250</h1>

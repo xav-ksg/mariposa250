@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Script from 'next/script';
-
 export const metadata = {
     title: 'Become a Vendor',
     description: 'Two vendor locations for the Mariposa 250 Celebration on July 4, 2026. Apply through Mariposa County. Food trucks welcome.',
@@ -63,13 +61,27 @@ function FrostShopButton() {
 export default function VendorPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-              <Script id="vendor-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'WebPage',
                 name: 'Become a Vendor at Mariposa 250',
                 description: 'Two vendor locations in downtown Mariposa for the July 4, 2026 Mariposa 250 Celebration. Apply through Mariposa County. Food trucks welcome.',
                 url: 'https://www.mariposa250.org/vendor',
-                about: { '@type': 'Event', name: 'Mariposa 250 Celebration', startDate: '2026-07-04', location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', addressCountry: 'US' } } }
+                about: {
+                  '@type': 'Event',
+                  name: "Mariposa 250 — America's 250th Birthday Celebration",
+                  startDate: '2026-07-04T09:00:00-07:00',
+                  endDate: '2026-07-04T22:00:00-07:00',
+                  eventStatus: 'https://schema.org/EventScheduled',
+                  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+                  isAccessibleForFree: true,
+                  url: 'https://www.mariposa250.org/',
+                  image: ['https://www.mariposa250.org/og-image.png'],
+                  location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', streetAddress: 'Historic Downtown — 5th & 8th Streets', addressLocality: 'Mariposa', addressRegion: 'CA', postalCode: '95338', addressCountry: 'US' } },
+                  organizer: { '@type': 'Organization', name: 'Mariposa Butterfly Festival', url: 'https://www.mariposa250.org/', logo: 'https://www.mariposa250.org/og-image.png' },
+                  performer: [{ '@type': 'PerformingGroup', name: 'Mariposa 250 Community Lineup' }],
+                  offers: { '@type': 'Offer', name: 'Free Admission', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.mariposa250.org/', validFrom: '2025-10-01T00:00:00-07:00' },
+                }
     }) }} />
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Vendor Information</p>

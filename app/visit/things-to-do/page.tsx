@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import TravelAdvisory from '@/components/TravelAdvisory';
-import Script from 'next/script';
-
 export const metadata = {
   title: 'Things to Do | Mariposa 250',
   description:
@@ -103,7 +101,7 @@ export default function ThingsToDoPage() {
       <TravelAdvisory />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
-        <Script id="thingstodo-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Things to Do in Mariposa County", description: "Museums, the Mariposa Grove of Giant Sequoias, wineries, tours, and activities in Mariposa County.", url: "https://www.mariposa250.org/visit/things-to-do" }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Things to Do in Mariposa County", description: "Museums, the Mariposa Grove of Giant Sequoias, wineries, tours, and activities in Mariposa County.", url: "https://www.mariposa250.org/visit/things-to-do" }) }} />
         <Link
           href="/visit"
           className="text-navy/60 text-sm hover:text-navy mb-6 inline-block"
