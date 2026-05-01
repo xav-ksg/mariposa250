@@ -1,6 +1,5 @@
 import VolunteerForm from '@/components/VolunteerForm';
-import Script from 'next/script';
-import { volunteerTasks } from '@/lib/content';
+import { volunteerTasks, EVENT_END_ISO } from '@/lib/content';
 
 export const metadata = {
     title: 'Volunteer',
@@ -18,14 +17,14 @@ export default function VolunteerPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
-              <Script id="volunteer-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'VolunteerAction',
                 name: 'Volunteer for Mariposa 250 Celebration',
                 description: 'Volunteer opportunities for the Mariposa 250 Celebration on July 4, 2026 in downtown Mariposa. Setup, stage crew, first aid, parade support, and 16 other roles.',
                 url: 'https://www.mariposa250.org/volunteer',
                 startTime: '2026-07-04T06:00-07:00',
-                endTime: '2026-07-04T23:00-07:00',
+                endTime: EVENT_END_ISO,
                 location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', addressCountry: 'US' } },
                 organizer: { '@type': 'Organization', name: 'Mariposa 250', url: 'https://www.mariposa250.org' }
     }) }} />

@@ -4,6 +4,23 @@
  */
 
 // =================================================================
+// CANONICAL EVENT TIMES — single source of truth.
+// To change the event start/end time, edit only the constants below.
+// All pages, JSON-LD schemas, and visible content import from here.
+// =================================================================
+
+export const EVENT_DATE_DISPLAY = 'Saturday, July 4, 2026';
+export const EVENT_DATE_ISO = '2026-07-04';
+export const EVENT_TZ_OFFSET = '-07:00';
+
+export const EVENT_START_TIME_DISPLAY = '9:00 AM';
+export const EVENT_END_TIME_DISPLAY = '11:00 PM';
+export const EVENT_HOURS_DISPLAY = `${EVENT_START_TIME_DISPLAY} – ${EVENT_END_TIME_DISPLAY}`;
+
+export const EVENT_START_ISO = `${EVENT_DATE_ISO}T09:00:00${EVENT_TZ_OFFSET}`;
+export const EVENT_END_ISO = `${EVENT_DATE_ISO}T23:00:00${EVENT_TZ_OFFSET}`;
+
+// =================================================================
 // STAGES & SCHEDULE
 // =================================================================
 
@@ -162,7 +179,7 @@ export const keyMoments: KeyMoment[] = [
     description: 'The culmination of the day. Choreographed drone display over downtown — approximately 20 minutes.',
   },
   {
-    time: '9:30 PM',
+    time: EVENT_END_TIME_DISPLAY,
     title: 'Event Ends',
     location: 'All areas',
     description: 'Vendors pack out, crew begins breakdown.',
@@ -364,7 +381,7 @@ export const volunteerTasks: VolunteerTaskSummary[] = [
   { id: 'vt-15', name: 'Photography Volunteers', category: 'Media', shift: 'All Day', volunteersNeeded: 3, priority: 'important', credentialsRequired: [], description: 'Capture key event moments.' },
   { id: 'vt-16', name: 'Staff Hospitality', category: 'Hospitality', shift: 'All Day', volunteersNeeded: 3, priority: 'standard', credentialsRequired: [], description: 'Keep water and snacks stocked for staff and volunteers.' },
   { id: 'vt-17', name: 'Sponsor Host/Liaison', category: 'Sponsor Relations', shift: 'Afternoon (1pm-5pm)', volunteersNeeded: 3, priority: 'important', credentialsRequired: ['18+'], description: 'Greet sponsors, make them feel appreciated.' },
-  { id: 'vt-18', name: 'End-of-Night Breakdown Crew', category: 'Breakdown', shift: 'Breakdown (9:30pm+)', volunteersNeeded: 20, priority: 'critical', credentialsRequired: ['18+'], description: 'Tear down stages, pack equipment, clean trash.' },
+  { id: 'vt-18', name: 'End-of-Night Breakdown Crew', category: 'Breakdown', shift: 'Breakdown (11pm+)', volunteersNeeded: 20, priority: 'critical', credentialsRequired: ['18+'], description: 'Tear down stages, pack equipment, clean trash.' },
   { id: 'vt-19', name: 'Day-After Final Cleanup', category: 'Breakdown', shift: 'Day After (July 5)', volunteersNeeded: 6, priority: 'important', credentialsRequired: ['18+'], description: 'Morning cleanup — final sweep of event footprint.' },
   { id: 'vt-20', name: 'Pre-Event Site Walkthrough', category: 'Setup', shift: 'Week Before', volunteersNeeded: 4, priority: 'important', credentialsRequired: [], description: 'Walk event footprint to verify all placements.' },
 ];

@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Script from 'next/script';
-
+import { EVENT_START_TIME_DISPLAY, EVENT_END_TIME_DISPLAY } from '@/lib/content';
 export const dynamic = 'force-static';
 
 // ⚠️ Event staff: update FAQ entries below as questions evolve.
@@ -28,7 +27,7 @@ const faqSections: FaqSection[] = [
     items: [
       {
         q: 'When and where is Mariposa 250?',
-        a: 'Saturday, July 4, 2026, from 9:00 AM to 10:30 PM in downtown Mariposa, California. The event spans multiple blocks of downtown with five music stages.',
+        a: `Saturday, July 4, 2026, from ${EVENT_START_TIME_DISPLAY} to ${EVENT_END_TIME_DISPLAY} in downtown Mariposa, California. The event spans multiple blocks of downtown with five music stages.`,
       },
       {
         q: 'How much does it cost to attend?',
@@ -252,7 +251,7 @@ export default function FAQPage() {
       <section className="mx-auto max-w-4xl px-6 py-16">
         <h1 className="font-serif text-5xl text-navy mb-6 leading-tight">
           Frequently Asked Questions
-          <Script id="faq-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", url: "https://www.mariposa250.org/faq", mainEntity: faqSections.flatMap((s) => s.items).map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a + (item.a_more ? ' ' + item.a_more : '') } })) }) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", url: "https://www.mariposa250.org/faq", mainEntity: faqSections.flatMap((s) => s.items).map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a + (item.a_more ? ' ' + item.a_more : '') } })) }) }} />
         </h1>
         <p className="text-lg text-navy/80 max-w-3xl mb-12 leading-relaxed">
           Planning to attend Mariposa 250 on July 4, 2026? Here&apos;s what our

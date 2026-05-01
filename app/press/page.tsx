@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import Script from 'next/script';
-
+import { EVENT_HOURS_DISPLAY } from '@/lib/content';
 export const metadata = {
     title: 'Press Kit',
     description: 'Media resources, press releases, and journalist contacts for the Mariposa 250 Celebration on July 4, 2026.',
@@ -15,7 +14,7 @@ export const metadata = {
 export default function PressPage() {
   return (
     <div className="bg-cream min-h-screen">
-              <Script id="press-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'NewsMediaOrganization',
                 name: 'Mariposa 250 Press Office',
@@ -78,7 +77,7 @@ export default function PressPage() {
               label="Date"
               value="Saturday, July 4, 2026"
             />
-            <FactItem label="Hours" value="9:00 AM – 10:30 PM" />
+            <FactItem label="Hours" value={EVENT_HOURS_DISPLAY} />
             <FactItem label="Location" value="Downtown Mariposa, California" />
             <FactItem
               label="Expected Attendance"

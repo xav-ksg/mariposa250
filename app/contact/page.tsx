@@ -1,6 +1,4 @@
 import ContactForm from '@/components/ContactForm';
-import Script from 'next/script';
-
 export const metadata = {
   title: 'Contact',
   description: 'Get in touch with the Mariposa 250 team.',
@@ -9,7 +7,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-    <Script id="contact-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "ContactPage", name: "Contact Mariposa 250", description: "Get in touch with the Mariposa 250 team for questions, partnerships, press inquiries, or general info.", url: "https://www.mariposa250.org/contact", mainEntity: { "@type": "Organization", name: "Mariposa Butterfly Festival", legalName: "Mariposa Butterfly Festival", taxID: "85-2475621", nonprofitStatus: "501(c)(3)", address: { "@type": "PostalAddress", addressLocality: "Mariposa", addressRegion: "CA", addressCountry: "US" }, url: "https://www.mariposa250.org" } }) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "ContactPage", name: "Contact Mariposa 250", description: "Get in touch with the Mariposa 250 team for questions, partnerships, press inquiries, or general info.", url: "https://www.mariposa250.org/contact", mainEntity: { "@type": "Organization", name: "Mariposa Butterfly Festival", legalName: "Mariposa Butterfly Festival", taxID: "85-2475621", nonprofitStatus: "501(c)(3)", address: { "@type": "PostalAddress", addressLocality: "Mariposa", addressRegion: "CA", addressCountry: "US" }, url: "https://www.mariposa250.org" } }) }} />
     <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
       <div className="border-b border-border pb-10">
         <p className="label-smallcaps mb-4">Contact</p>
