@@ -17,7 +17,7 @@ export const EVENT_START_TIME_DISPLAY = '9:00 AM';
 export const EVENT_END_TIME_DISPLAY = '11:00 PM';
 export const EVENT_HOURS_DISPLAY = `${EVENT_START_TIME_DISPLAY} – ${EVENT_END_TIME_DISPLAY}`;
 
-export const EVENT_START_ISO = `${EVENT_DATE_ISO}T09:00:00${EVENT_TZ_OFFSET}`;
+export const EVENT_START_ISO = `${EVENT_DATE_ISO}T11:00:00${EVENT_TZ_OFFSET}`;
 export const EVENT_END_ISO = `${EVENT_DATE_ISO}T23:00:00${EVENT_TZ_OFFSET}`;
 
 // =================================================================
