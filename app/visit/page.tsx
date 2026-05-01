@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Script from 'next/script';
 import TravelAdvisory from '@/components/TravelAdvisory';
 
 export const metadata = {
@@ -16,7 +15,7 @@ export const metadata = {
 export default function VisitPage() {
   return (
     <div className="bg-cream min-h-screen">
-              <Script id="visit-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'TouristDestination',
                 name: 'Mariposa County, California',

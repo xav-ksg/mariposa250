@@ -1,4 +1,3 @@
-import Script from 'next/script';
 export const metadata = {
     title: 'Event Map',
     description: 'Event map for the Mariposa 250 Celebration on July 4, 2026. Stages, vendor areas, parade route, and first aid in downtown Mariposa.',
@@ -12,7 +11,7 @@ export const metadata = {
 
 export default function MapPage() {
   return (<>
-            <Script id="map-jsonld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Place',
                         name: 'Mariposa 250 Celebration — Downtown Mariposa Event Map',

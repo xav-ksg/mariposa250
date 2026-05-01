@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
-
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
   description: 'Answers to common questions about Mariposa 250 on July 4, 2026 — parking, schedule, parade, drone show, vendors, and accessibility.',
@@ -31,10 +29,7 @@ const faqSchema = {
 export default function FaqLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Script
-        id="schema-faq"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {children}
     </>
