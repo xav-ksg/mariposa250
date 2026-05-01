@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Countdown from '@/components/Countdown';
+import { EVENT_START_ISO, EVENT_END_ISO } from '@/lib/content';
 
 const FB_EVENT_URL = 'https://www.facebook.com/events/963357109509757';
 
@@ -9,8 +10,8 @@ const eventJsonLd = {
   name: "Mariposa 250 — America's 250th Birthday Celebration",
   description:
     'A free, day-long community celebration on July 4, 2026 in downtown Mariposa, California. Five music stages, Kids Zone, community parade, and a 200-drone light show.',
-  startDate: '2026-07-04T09:00:00-07:00',
-  endDate: '2026-07-04T22:00:00-07:00',
+  startDate: EVENT_START_ISO,
+  endDate: EVENT_END_ISO,
   eventStatus: 'https://schema.org/EventScheduled',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   isAccessibleForFree: true,
@@ -129,7 +130,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-16">
-            <Countdown targetDate="2026-07-04T09:00:00-07:00" />
+            <Countdown targetDate={EVENT_START_ISO} />
           </div>
         </div>
       </section>

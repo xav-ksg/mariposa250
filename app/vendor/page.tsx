@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { EVENT_START_ISO, EVENT_END_ISO } from '@/lib/content';
 export const metadata = {
     title: 'Become a Vendor',
     description: 'Two vendor locations for the Mariposa 250 Celebration on July 4, 2026. Apply through Mariposa County. Food trucks welcome.',
@@ -70,8 +71,8 @@ export default function VendorPage() {
                 about: {
                   '@type': 'Event',
                   name: "Mariposa 250 — America's 250th Birthday Celebration",
-                  startDate: '2026-07-04T09:00:00-07:00',
-                  endDate: '2026-07-04T22:00:00-07:00',
+                  startDate: EVENT_START_ISO,
+                  endDate: EVENT_END_ISO,
                   eventStatus: 'https://schema.org/EventScheduled',
                   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
                   isAccessibleForFree: true,

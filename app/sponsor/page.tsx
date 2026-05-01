@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { EVENT_START_ISO, EVENT_END_ISO } from '@/lib/content';
 
 export const metadata = {
     title: 'Become a Sponsor',
@@ -196,8 +197,8 @@ export default function SponsorPage() {
                 about: {
                   '@type': 'Event',
                   name: "Mariposa 250 — America's 250th Birthday Celebration",
-                  startDate: '2026-07-04T09:00:00-07:00',
-                  endDate: '2026-07-04T22:00:00-07:00',
+                  startDate: EVENT_START_ISO,
+                  endDate: EVENT_END_ISO,
                   eventStatus: 'https://schema.org/EventScheduled',
                   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
                   isAccessibleForFree: true,

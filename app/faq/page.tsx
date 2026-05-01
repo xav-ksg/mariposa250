@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { EVENT_START_TIME_DISPLAY, EVENT_END_TIME_DISPLAY } from '@/lib/content';
 export const dynamic = 'force-static';
 
 // ⚠️ Event staff: update FAQ entries below as questions evolve.
@@ -26,7 +27,7 @@ const faqSections: FaqSection[] = [
     items: [
       {
         q: 'When and where is Mariposa 250?',
-        a: 'Saturday, July 4, 2026, from 9:00 AM to 10:30 PM in downtown Mariposa, California. The event spans multiple blocks of downtown with five music stages.',
+        a: `Saturday, July 4, 2026, from ${EVENT_START_TIME_DISPLAY} to ${EVENT_END_TIME_DISPLAY} in downtown Mariposa, California. The event spans multiple blocks of downtown with five music stages.`,
       },
       {
         q: 'How much does it cost to attend?',

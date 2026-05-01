@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import TravelAdvisory from '@/components/TravelAdvisory';
+import { EVENT_START_ISO, EVENT_END_ISO, EVENT_HOURS_DISPLAY } from '@/lib/content';
 export const metadata = {
   title: 'Day of the Celebration | Mariposa 250',
   description:
@@ -9,7 +10,7 @@ export const metadata = {
 export default function DayOfPage() {
   return (
     <div className="bg-cream min-h-screen">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Day of the Celebration — Mariposa 250", description: "Day-of logistics for July 4, 2026: parking, road closures, shuttle routes, accessibility, and what to bring.", url: "https://www.mariposa250.org/visit/day-of", about: { "@type": "Event", name: "Mariposa 250 — America's 250th Birthday Celebration", startDate: "2026-07-04T09:00:00-07:00", endDate: "2026-07-04T22:00:00-07:00", eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode", isAccessibleForFree: true, url: "https://www.mariposa250.org/", image: ["https://www.mariposa250.org/og-image.png"], location: { "@type": "Place", name: "Downtown Mariposa", address: { "@type": "PostalAddress", streetAddress: "Historic Downtown — 5th & 8th Streets", addressLocality: "Mariposa", addressRegion: "CA", postalCode: "95338", addressCountry: "US" } }, organizer: { "@type": "Organization", name: "Mariposa Butterfly Festival", url: "https://www.mariposa250.org/", logo: "https://www.mariposa250.org/og-image.png" }, performer: [{ "@type": "PerformingGroup", name: "Mariposa 250 Community Lineup" }], offers: { "@type": "Offer", name: "Free Admission", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock", url: "https://www.mariposa250.org/", validFrom: "2025-10-01T00:00:00-07:00" } } }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Day of the Celebration — Mariposa 250", description: "Day-of logistics for July 4, 2026: parking, road closures, shuttle routes, accessibility, and what to bring.", url: "https://www.mariposa250.org/visit/day-of", about: { "@type": "Event", name: "Mariposa 250 — America's 250th Birthday Celebration", startDate: EVENT_START_ISO, endDate: EVENT_END_ISO, eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode", isAccessibleForFree: true, url: "https://www.mariposa250.org/", image: ["https://www.mariposa250.org/og-image.png"], location: { "@type": "Place", name: "Downtown Mariposa", address: { "@type": "PostalAddress", streetAddress: "Historic Downtown — 5th & 8th Streets", addressLocality: "Mariposa", addressRegion: "CA", postalCode: "95338", addressCountry: "US" } }, organizer: { "@type": "Organization", name: "Mariposa Butterfly Festival", url: "https://www.mariposa250.org/", logo: "https://www.mariposa250.org/og-image.png" }, performer: [{ "@type": "PerformingGroup", name: "Mariposa 250 Community Lineup" }], offers: { "@type": "Offer", name: "Free Admission", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock", url: "https://www.mariposa250.org/", validFrom: "2025-10-01T00:00:00-07:00" } } }) }} />
       <TravelAdvisory />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
@@ -36,7 +37,7 @@ export default function DayOfPage() {
               <strong>Event date:</strong> Saturday, July 4, 2026
             </div>
             <div>
-              <strong>Hours:</strong> 9:00 AM – 10:30 PM
+              <strong>Hours:</strong> {EVENT_HOURS_DISPLAY}
             </div>
             <div>
               <strong>Location:</strong> Downtown Mariposa
