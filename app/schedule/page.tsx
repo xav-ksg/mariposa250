@@ -1,4 +1,4 @@
-import { stages, keyMoments } from '@/lib/content';
+import { stages, keyMoments, EVENT_START_ISO, EVENT_END_ISO } from '@/lib/content';
 
 export const metadata = {
   title: 'Full Event Schedule',
@@ -18,8 +18,8 @@ export default function SchedulePage() {
               '@context': 'https://schema.org',
               '@type': 'Event',
               name: 'Mariposa 250 Celebration',
-              startDate: '2026-07-04T10:00-07:00',
-              endDate: '2026-07-04T22:30-07:00',
+              startDate: EVENT_START_ISO,
+              endDate: EVENT_END_ISO,
               eventStatus: 'https://schema.org/EventScheduled',
               eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
               isAccessibleForFree: true,

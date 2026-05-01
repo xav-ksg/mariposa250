@@ -1,5 +1,5 @@
 import VolunteerForm from '@/components/VolunteerForm';
-import { volunteerTasks } from '@/lib/content';
+import { volunteerTasks, EVENT_END_ISO } from '@/lib/content';
 
 export const metadata = {
     title: 'Volunteer',
@@ -24,7 +24,7 @@ export default function VolunteerPage() {
                 description: 'Volunteer opportunities for the Mariposa 250 Celebration on July 4, 2026 in downtown Mariposa. Setup, stage crew, first aid, parade support, and 16 other roles.',
                 url: 'https://www.mariposa250.org/volunteer',
                 startTime: '2026-07-04T06:00-07:00',
-                endTime: '2026-07-04T23:00-07:00',
+                endTime: EVENT_END_ISO,
                 location: { '@type': 'Place', name: 'Downtown Mariposa', address: { '@type': 'PostalAddress', addressLocality: 'Mariposa', addressRegion: 'CA', addressCountry: 'US' } },
                 organizer: { '@type': 'Organization', name: 'Mariposa 250', url: 'https://www.mariposa250.org' }
     }) }} />

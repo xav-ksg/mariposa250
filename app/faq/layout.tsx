@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { EVENT_START_TIME_DISPLAY, EVENT_END_TIME_DISPLAY } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
   description: 'Answers to common questions about Mariposa 250 on July 4, 2026 — parking, schedule, parade, drone show, vendors, and accessibility.',
@@ -14,7 +15,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'When and where is Mariposa 250?', acceptedAnswer: { '@type': 'Answer', text: 'Saturday, July 4, 2026, from 9:00 AM to 10:30 PM in downtown Mariposa, California across five music stages.' } },
+    { '@type': 'Question', name: 'When and where is Mariposa 250?', acceptedAnswer: { '@type': 'Answer', text: `Saturday, July 4, 2026, from ${EVENT_START_TIME_DISPLAY} to ${EVENT_END_TIME_DISPLAY} in downtown Mariposa, California across five music stages.` } },
     { '@type': 'Question', name: 'How much does it cost to attend?', acceptedAnswer: { '@type': 'Answer', text: 'The event is free. Food and drinks are sold by vendors.' } },
     { '@type': 'Question', name: 'Is it family-friendly?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. There is a Kids Zone, family-friendly performances, and the 9 PM drone show is suitable for all ages.' } },
     { '@type': 'Question', name: 'Do I need tickets or to register?', acceptedAnswer: { '@type': 'Answer', text: 'No tickets or pre-registration required. Just show up.' } },

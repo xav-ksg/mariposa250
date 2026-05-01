@@ -40,7 +40,7 @@ export default function AboutPage() {
 
         <h2 className="font-display text-3xl text-navy">What the day looks like</h2>
         <p>
-          Gates open at 9:00 AM. Five stages of music play throughout the
+          Gates open at 11:00 AM. Five stages of music play throughout the
           day. The Kids Zone runs from 11:00 AM to 5:00 PM. The Mariposa
           Museum and History Center hosts historical programming including a
           History-Themed Costume Contest and a Historical Firearms Auction.
