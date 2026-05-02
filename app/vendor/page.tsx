@@ -71,6 +71,7 @@ export default function VendorPage() {
                 about: {
                   '@type': 'Event',
                   name: "Mariposa 250 — America's 250th Birthday Celebration",
+                  description: 'A free, day-long community celebration on July 4, 2026 in downtown Mariposa, California. Five music stages, Kids Zone, community parade, and a 200-drone light show.',
                   startDate: EVENT_START_ISO,
                   endDate: EVENT_END_ISO,
                   eventStatus: 'https://schema.org/EventScheduled',
