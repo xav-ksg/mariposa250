@@ -126,8 +126,8 @@ export interface KeyMoment {
 
 export const keyMoments: KeyMoment[] = [
   {
-    time: '9:00 AM',
-    title: 'Gates Open',
+    time: '8:00 AM',
+    title: 'Vendor Setup Opens',
     location: 'All vendor areas, Info Booth',
     description: 'Vendor booths open, Info Booth staffed, first aid available.',
   },
