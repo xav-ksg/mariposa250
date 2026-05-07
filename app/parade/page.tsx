@@ -52,12 +52,12 @@ const paradeSchema = {
     validFrom: '2025-10-01T00:00:00-07:00',
   },
 };
-const COUNTY_PARADE_URL = 'https://www.mariposacounty.gov/3034/Parade-Entry';
+const CHAMBER_PARADE_URL = 'https://forms.gle/H78etzfhCJBGQocKA';
 
-function CountyParadeButton() {
+function ChamberParadeButton() {
   return (
-    <a href={COUNTY_PARADE_URL} target="_blank" rel="noopener noreferrer" className="inline-block rounded bg-oxblood px-8 py-4 text-base font-semibold uppercase tracking-widest text-cream hover:bg-navy transition">
-      Apply through Mariposa County
+    <a href={CHAMBER_PARADE_URL} target="_blank" rel="noopener noreferrer" className="inline-block rounded bg-oxblood px-8 py-4 text-base font-semibold uppercase tracking-widest text-cream hover:bg-navy transition">
+      Apply Through the Mariposa Chamber of Commerce
     </a>
   );
 }
@@ -117,9 +117,9 @@ export default function ParadePage() {
           <p className="label-smallcaps text-gold mb-3">Parade Entry Applications</p>
           <h2 className="font-display text-3xl text-gold mb-4">Enter the Parade</h2>
           <p className="text-cream/90 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Parade entry applications are handled through the Mariposa County government portal. Click below to submit your entry. You will receive confirmation and line-up instructions from the County and Mariposa 250 organizers closer to the event.
+            Parade entry applications are handled by the Mariposa Chamber of Commerce. Click below to submit your application. You will receive confirmation and line-up instructions from the Chamber and Mariposa 250 organizers closer to the event.
           </p>
-          <CountyParadeButton />
+          <ChamberParadeButton />
           <p className="mt-6 text-cream/70 text-sm">
             Questions about parade entries? Email the Mariposa Chamber of Commerce at kari@mariposachamber.org or jacob@mariposachamber.org.
           </p>
