@@ -3,7 +3,7 @@
 > ## 🔒 READ FIRST — KSG operating rules live upstream, not in this file
 >
 > 1. **Notion is the source of truth.** Canonical rule page: **"🔒 CANONICAL: KSG System of Record — Storage & Source of Truth Rule"** → Notion `3bfa27745fa981f3bf12da8fd487377f`
-> 2. **🗺️ THE MAP — "KSG Source-of-Truth Index"** → Notion database `60d8cbd5e1cc4b1999cca90667f7bffe`. Every platform's repo, host, local path, prod, Supabase ref, Notion workspace, and applicable standards. *(Replaces the old `Xav Master Control/KSG Source-of-Truth Index (2026-07-13).md`, which never existed on disk.)*
+> 2. **🗺️ THE MAP — "KSG Source-of-Truth Index"** → Notion database `60d8cbd5e1cc4b1999cca90667f7bffe`. Every platform's repo, host, local path, prod, Supabase ref, Notion workspace, and applicable standards. *(Replaces the old ~~`Xav Master Control/KSG Source-of-Truth Index (2026-07-13).md`~~ **(never existed on disk — superseded by the Notion Index above)**, which never existed on disk.)*
 > 3. **Ecosystem root:** `github.com/xav-ksg/ksg-control` → `CLAUDE.md` (local: `~/Developer/ksg-control/CLAUDE.md`). Authorization posture, DEPLOY MODE, concurrency, cross-platform rules.
 >
 > Everything below this block is repo-specific. Where it conflicts with the above, **the above wins.**
