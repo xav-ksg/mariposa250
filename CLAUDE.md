@@ -47,4 +47,4 @@ Real secrets live in 1Password (Kenwood vault) — never committed. Only publish
 ## Authorization posture
 Default to acting on internal/reversible work. PAUSE AND CONFIRM before: external comms, financial/payment changes, production deploys, destructive ops (deletes, schema drops, force-push), anything >$100 impact, DNS/domain/1Password changes. Direct pushes to the default branch are treated as gated.
 
-*CLAUDE.md parity pass 2026-08-26 — [CP] retired in favour of [M250]; $100 gate; Standards Register added.*
+*CLAUDE.md parity pass 2026-08-26 — Community Pulse tag retired in favour of [M250]; $100 gate; Standards Register added.*
